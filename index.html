@@ -458,6 +458,53 @@
         overflow-x: auto;
       }
 
+      /* ── MOBILE CARD VIEW ── */
+      .card-list {
+        display: none;
+        gap: 0.9rem;
+      }
+
+      .adv-card {
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        background: #fff;
+        padding: 0.95rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .adv-card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .adv-card-sections {
+        display: grid;
+        gap: 0.65rem;
+      }
+
+      .adv-card-section {
+        background: var(--paper);
+        border: 1px solid #efe9df;
+        border-radius: 8px;
+        padding: 0.55rem 0.65rem;
+      }
+
+      .adv-card-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink4);
+        margin-bottom: 4px;
+      }
+
+      .adv-card .note-text {
+        margin-top: 2px;
+      }
+
       thead {
         background: var(--paper2);
         border-bottom: 1.5px solid var(--rule);
@@ -863,6 +910,16 @@
           padding: 10px;
         }
       }
+
+      @media (max-width: 900px) {
+        .data-table-scroll {
+          display: none;
+        }
+
+        .card-list {
+          display: grid;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1082,7 +1139,7 @@
           <span class="result-count" id="count1"></span>
         </div>
 
-        <div class="table-scroll">
+        <div class="table-scroll data-table-scroll">
           <div class="table-wrap">
             <table>
               <thead>
@@ -1099,6 +1156,8 @@
             </table>
           </div>
         </div>
+
+        <div class="card-list" id="cards1"></div>
 
         <div class="legend">
           <div class="legend-item">
@@ -1192,7 +1251,7 @@
           <span class="result-count" id="count2"></span>
         </div>
 
-        <div class="table-scroll">
+        <div class="table-scroll data-table-scroll">
           <div class="table-wrap">
             <table>
               <thead>
@@ -1209,6 +1268,8 @@
             </table>
           </div>
         </div>
+
+        <div class="card-list" id="cards2"></div>
 
         <div class="legend">
           <div class="legend-item">
@@ -1309,7 +1370,7 @@
           <span class="result-count" id="count3"></span>
         </div>
 
-        <div class="table-scroll">
+        <div class="table-scroll data-table-scroll">
           <div class="table-wrap">
             <table>
               <thead>
@@ -1326,6 +1387,8 @@
             </table>
           </div>
         </div>
+
+        <div class="card-list" id="cards3"></div>
 
         <div class="legend">
           <div class="legend-item">
@@ -2100,8 +2163,52 @@
           .join("");
       }
 
+      function renderCards(filtered) {
+        if (!filtered.length) {
+          return `<div class="adv-card"><div class="empty-row" style="padding: 1rem 0.5rem;"><span class="empty-kanji">？</span>No results found.</div></div>`;
+        }
+
+        return filtered
+          .map(
+            (d) => `
+    <article class="adv-card">
+      <div class="adv-card-head">
+        <div>
+          <div class="word-jp">${d.word}</div>
+          <div class="word-reading">${d.reading}</div>
+        </div>
+        <span class="badge ${badgeColor(d.subtype)}">${d.subtypeName}</span>
+      </div>
+
+      <div class="adv-card-sections">
+        <section class="adv-card-section">
+          <div class="adv-card-label">Pattern</div>
+          ${d.patterns.map((p) => `<div class="pattern-line">${p}</div>`).join("")}
+        </section>
+
+        <section class="adv-card-section">
+          <div class="adv-card-label">Meaning</div>
+          ${d.meanings.map((m) => `<div class="meaning-line">${m}</div>`).join("")}
+        </section>
+
+        <section class="adv-card-section">
+          <div class="adv-card-label">Example</div>
+          ${d.examples.map((e) => `<div class="ex-block"><div class="ex-jp">${e.jp}</div><div class="ex-en">${e.en}</div></div>`).join("")}
+        </section>
+
+        ${d.note ? `<section class="adv-card-section"><div class="adv-card-label">Notes</div><div class="note-text">${d.note}</div></section>` : ""}
+      </div>
+    </article>
+  `,
+          )
+          .join("");
+      }
+
       function filterTable(tbodyId, searchId, chipsId) {
         const tbody = document.getElementById(tbodyId);
+        const cards = document.getElementById(
+          tbodyId.replace("tbody", "cards"),
+        );
         const q = document.getElementById(searchId).value.toLowerCase();
         const activeChip = document.querySelector(`#${chipsId} .chip.active`);
         const filterType = activeChip ? activeChip.dataset.filter : "all";
@@ -2129,6 +2236,9 @@
         });
 
         tbody.innerHTML = renderRows(data, filtered);
+        if (cards) {
+          cards.innerHTML = renderCards(filtered);
+        }
 
         const countId = tbodyId.replace("tbody", "count");
         document.getElementById(countId).textContent =
