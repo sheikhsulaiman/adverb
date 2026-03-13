@@ -284,6 +284,85 @@
         border-bottom: 2px solid var(--red);
       }
 
+      /* ── MOBILE NAV ── */
+      .mobile-nav {
+        display: none;
+        position: sticky;
+        top: 0;
+        z-index: 120;
+      }
+
+      .mobile-nav-bar {
+        background: var(--ink2);
+        color: var(--paper);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .mobile-nav-current {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(250, 247, 242, 0.75);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .mobile-nav-toggle {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        color: #faf7f2;
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-family: "Outfit", sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .mobile-nav-panel {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        z-index: 119;
+        background: #fff;
+        border-bottom: 1px solid var(--rule);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        padding: 0.5rem;
+      }
+
+      .mobile-nav-panel.open {
+        display: grid;
+        gap: 6px;
+      }
+
+      .mobile-nav-link {
+        border: 1px solid var(--rule);
+        background: var(--paper2);
+        color: var(--ink2);
+        border-radius: 8px;
+        text-align: left;
+        padding: 10px 12px;
+        font-family: "Outfit", sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+      }
+
+      .mobile-nav-link.active {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #faf7f2;
+      }
+
       /* ── MAIN ── */
       main {
         max-width: 1200px;
@@ -912,6 +991,14 @@
       }
 
       @media (max-width: 900px) {
+        .nav-tabs {
+          display: none;
+        }
+
+        .mobile-nav {
+          display: block;
+        }
+
         .data-table-scroll {
           display: none;
         }
@@ -954,22 +1041,99 @@
 
     <!-- NAV -->
     <nav class="nav-tabs" id="navTabs">
-      <button class="nav-tab active" onclick="scrollToSection('overview')">
+      <button
+        class="nav-tab active"
+        data-section="overview"
+        onclick="scrollToSection('overview')"
+      >
         Overview
       </button>
-      <button class="nav-tab" onclick="scrollToSection('jotai')">
+      <button
+        class="nav-tab"
+        data-section="jotai"
+        onclick="scrollToSection('jotai')"
+      >
         ① 情態の副詞
       </button>
-      <button class="nav-tab" onclick="scrollToSection('teido')">
+      <button
+        class="nav-tab"
+        data-section="teido"
+        onclick="scrollToSection('teido')"
+      >
         ② 程度の副詞
       </button>
-      <button class="nav-tab" onclick="scrollToSection('koou')">
+      <button
+        class="nav-tab"
+        data-section="koou"
+        onclick="scrollToSection('koou')"
+      >
         ③ 呼応の副詞
       </button>
-      <button class="nav-tab" onclick="scrollToSection('compare')">
+      <button
+        class="nav-tab"
+        data-section="compare"
+        onclick="scrollToSection('compare')"
+      >
         Quick Compare
       </button>
     </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav-bar">
+        <div class="mobile-nav-current" id="mobileNavCurrent">Overview</div>
+        <button
+          class="mobile-nav-toggle"
+          id="mobileNavToggle"
+          type="button"
+          aria-controls="mobileNavPanel"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+      </div>
+      <div class="mobile-nav-panel" id="mobileNavPanel">
+        <button
+          class="mobile-nav-link active"
+          data-section="overview"
+          type="button"
+          onclick="scrollToSection('overview')"
+        >
+          Overview
+        </button>
+        <button
+          class="mobile-nav-link"
+          data-section="jotai"
+          type="button"
+          onclick="scrollToSection('jotai')"
+        >
+          ① 情態の副詞
+        </button>
+        <button
+          class="mobile-nav-link"
+          data-section="teido"
+          type="button"
+          onclick="scrollToSection('teido')"
+        >
+          ② 程度の副詞
+        </button>
+        <button
+          class="mobile-nav-link"
+          data-section="koou"
+          type="button"
+          onclick="scrollToSection('koou')"
+        >
+          ③ 呼応の副詞
+        </button>
+        <button
+          class="mobile-nav-link"
+          data-section="compare"
+          type="button"
+          onclick="scrollToSection('compare')"
+        >
+          Quick Compare
+        </button>
+      </div>
+    </div>
 
     <main>
       <!-- OVERVIEW -->
@@ -2257,14 +2421,47 @@
         document
           .getElementById(id)
           .scrollIntoView({ behavior: "smooth", block: "start" });
-        document
-          .querySelectorAll(".nav-tab")
-          .forEach((t) => t.classList.remove("active"));
-        const idx = ["overview", "jotai", "teido", "koou", "compare"].indexOf(
-          id,
-        );
-        if (idx >= 0)
-          document.querySelectorAll(".nav-tab")[idx].classList.add("active");
+        setActiveNav(id);
+        closeMobileNav();
+      }
+
+      const sectionTitleMap = {
+        overview: "Overview",
+        jotai: "① 情態の副詞",
+        teido: "② 程度の副詞",
+        koou: "③ 呼応の副詞",
+        compare: "Quick Compare",
+      };
+
+      function setActiveNav(sectionId) {
+        document.querySelectorAll(".nav-tab").forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.section === sectionId);
+        });
+
+        document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+          link.classList.toggle("active", link.dataset.section === sectionId);
+        });
+
+        const current = document.getElementById("mobileNavCurrent");
+        if (current) {
+          current.textContent = sectionTitleMap[sectionId] || "Menu";
+        }
+      }
+
+      function closeMobileNav() {
+        const panel = document.getElementById("mobileNavPanel");
+        const toggle = document.getElementById("mobileNavToggle");
+        if (!panel || !toggle) return;
+        panel.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+
+      function toggleMobileNav() {
+        const panel = document.getElementById("mobileNavPanel");
+        const toggle = document.getElementById("mobileNavToggle");
+        if (!panel || !toggle) return;
+        const isOpen = panel.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       }
 
       /* ═══════════════ INIT ═══════════════ */
@@ -2272,6 +2469,19 @@
         filterTable("tbody1", "search1", "chips1");
         filterTable("tbody2", "search2", "chips2");
         filterTable("tbody3", "search3", "chips3");
+        setActiveNav("overview");
+
+        const mobileToggle = document.getElementById("mobileNavToggle");
+        if (mobileToggle) {
+          mobileToggle.addEventListener("click", toggleMobileNav);
+        }
+
+        document.addEventListener("click", (event) => {
+          const mobileNav = document.getElementById("mobileNav");
+          if (!mobileNav || !mobileNav.contains(event.target)) {
+            closeMobileNav();
+          }
+        });
       }
 
       init();
@@ -2284,10 +2494,7 @@
           const el = document.getElementById(id);
           if (el && window.scrollY >= el.offsetTop - 80) current = id;
         });
-        const idx = sections.indexOf(current);
-        document
-          .querySelectorAll(".nav-tab")
-          .forEach((t, i) => t.classList.toggle("active", i === idx));
+        setActiveNav(current);
       });
 
       if ("serviceWorker" in navigator) {
