@@ -1,0 +1,32 @@
+{
+    "id": "/adverb/",
+    "name": "Japanese Adverbs Complete Guide",
+    "short_name": "JP Adverbs",
+    "description": "Complete reference for Japanese adverb types with usage patterns and examples.",
+    "start_url": "/adverb/",
+    "scope": "/adverb/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "theme_color": "#0f0e0c",
+    "background_color": "#faf7f2",
+    "icons": [
+        {
+            "src": "images/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "images/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "images/maskable-icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

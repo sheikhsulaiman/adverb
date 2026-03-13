@@ -1,1276 +1,2192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Japanese Adverbs — Complete Guide | 副詞完全ガイド</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --ink: #0f0e0c;
-  --ink2: #3a3730;
-  --ink3: #7a7568;
-  --ink4: #b0a99e;
-  --paper: #faf7f2;
-  --paper2: #f2ede4;
-  --paper3: #e8e1d5;
-  --rule: #ddd6c8;
-
-  --red: #b83a20;
-  --red-bg: #fdf1ee;
-  --red-mid: #e8a090;
-
-  --blue: #1f558a;
-  --blue-bg: #eef4fb;
-  --blue-mid: #8ab0d8;
-
-  --green: #2a6647;
-  --green-bg: #edf5f0;
-  --green-mid: #84c0a0;
-
-  --amber: #8a5412;
-  --amber-bg: #fdf4e8;
-  --amber-mid: #d4a060;
-
-  --purple: #5c3a8a;
-  --purple-bg: #f2eefb;
-  --purple-mid: #a888d8;
-
-  --teal: #1a6870;
-  --teal-bg: #eaf5f6;
-  --teal-mid: #72bcc4;
-
-  --section-1: #b83a20;
-  --section-2: #1f558a;
-  --section-3: #5c3a8a;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Outfit', sans-serif;
-  background: var(--paper);
-  color: var(--ink);
-  line-height: 1.6;
-  font-size: 15px;
-}
-
-/* ── HERO ── */
-.hero {
-  background: var(--ink);
-  color: var(--paper);
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.hero-bg-text {
-  position: absolute;
-  top: -0.15em;
-  right: -0.05em;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 22vw;
-  font-weight: 700;
-  color: rgba(255,255,255,0.035);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  white-space: nowrap;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 3rem 3rem 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 1.2rem;
-}
-
-.hero-tag {
-  background: var(--red);
-  color: white;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 2px;
-}
-
-.hero-level {
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 400;
-  line-height: 1.05;
-  color: #faf7f2;
-  margin-bottom: 0.6rem;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: rgba(250,247,242,0.55);
-}
-
-.hero-subtitle {
-  font-size: 14px;
-  color: rgba(250,247,242,0.5);
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  margin-bottom: 2rem;
-}
-
-.hero-stats {
-  display: flex;
-  gap: 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.stat {
-  padding: 0 2rem 0 0;
-  margin-right: 2rem;
-  border-right: 1px solid rgba(255,255,255,0.1);
-}
-.stat:last-child { border-right: none; }
-
-.stat-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #faf7f2;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 11px;
-  color: rgba(250,247,242,0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-top: 4px;
-}
-
-/* ── NAV TABS ── */
-.nav-tabs {
-  background: var(--ink2);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.nav-tabs::-webkit-scrollbar { display: none; }
-
-.nav-tab {
-  flex-shrink: 0;
-  padding: 14px 24px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(250,247,242,0.45);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
-  white-space: nowrap;
-  border: none;
-  background: none;
-  font-family: 'Outfit', sans-serif;
-}
-
-.nav-tab:hover { color: rgba(250,247,242,0.8); }
-.nav-tab.active { color: #faf7f2; border-bottom: 2px solid var(--red); }
-
-/* ── MAIN ── */
-main { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 5rem; }
-
-/* ── SECTION HEADERS ── */
-.section {
-  margin-bottom: 4rem;
-  scroll-margin-top: 60px;
-}
-
-.section-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--rule);
-}
-
-.section-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--ink4);
-  letter-spacing: 0.1em;
-  margin-top: 6px;
-  white-space: nowrap;
-}
-
-.section-title-wrap {}
-
-.section-jp {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 4px;
-}
-
-.section-en {
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--ink3);
-}
-
-.section-desc {
-  font-size: 13.5px;
-  color: var(--ink3);
-  line-height: 1.7;
-  max-width: 680px;
-  margin-top: 0.5rem;
-}
-
-/* Color per section */
-.s1 .section-jp { color: var(--section-1); }
-.s2 .section-jp { color: var(--section-2); }
-.s3 .section-jp { color: var(--section-3); }
-
-/* ── CONTROLS ── */
-.controls-bar {
-  background: var(--paper2);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.search-wrap { position: relative; flex: 1; min-width: 200px; }
-
-.search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--ink4);
-  font-size: 14px;
-  pointer-events: none;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 9px 12px 9px 36px;
-  border: 1px solid var(--rule);
-  border-radius: 5px;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'Outfit', sans-serif;
-  font-size: 13.5px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-input[type="text"]:focus { border-color: var(--ink3); }
-input[type="text"]::placeholder { color: var(--ink4); }
-
-.chips { display: flex; gap: 6px; flex-wrap: wrap; }
-
-.chip {
-  padding: 5px 12px;
-  border-radius: 3px;
-  border: 1px solid var(--rule);
-  background: var(--paper);
-  color: var(--ink3);
-  font-family: 'Outfit', sans-serif;
-  font-size: 11.5px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
-.chip:hover { border-color: var(--ink3); color: var(--ink); }
-.chip.active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-
-.result-count {
-  font-size: 12px;
-  color: var(--ink4);
-  font-family: 'JetBrains Mono', monospace;
-  white-space: nowrap;
-  align-self: center;
-}
-
-/* ── TABLE ── */
-.table-wrap {
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13.5px;
-  min-width: 750px;
-}
-
-.table-scroll { overflow-x: auto; }
-
-thead {
-  background: var(--paper2);
-  border-bottom: 1.5px solid var(--rule);
-}
-
-thead th {
-  padding: 11px 14px;
-  text-align: left;
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink3);
-  white-space: nowrap;
-}
-
-tbody tr {
-  border-bottom: 1px solid #f0ece5;
-  transition: background 0.1s;
-}
-tbody tr:last-child { border-bottom: none; }
-tbody tr:hover { background: var(--paper); }
-
-td { padding: 13px 14px; vertical-align: top; }
-
-/* WORD CELL */
-.word-jp {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 3px;
-}
-.word-reading {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
-  color: var(--ink4);
-  letter-spacing: 0.03em;
-}
-
-/* BADGE */
-.badge {
-  display: inline-block;
-  padding: 3px 8px;
-  border-radius: 2px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-.b-jotai   { background: #e8f0fb; color: #1f558a; }
-.b-teido   { background: #edf5f0; color: #2a6647; }
-.b-koou-neg { background: #fdf1ee; color: #b83a20; }
-.b-koou-pos { background: #f2eefb; color: #5c3a8a; }
-.b-koou-both { background: #fdf4e8; color: #8a5412; }
-.b-koou-cond { background: #eaf5f6; color: #1a6870; }
-
-/* PATTERN */
-.pattern-line {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--ink3);
-  line-height: 1.6;
-  padding: 1px 0;
-}
-
-/* MEANING */
-.meaning-line {
-  font-size: 13px;
-  color: var(--ink);
-  line-height: 1.5;
-  padding: 1px 0;
-}
-.meaning-line::before { content: '• '; color: var(--ink4); }
-
-/* EXAMPLE */
-.ex-block { margin-bottom: 9px; }
-.ex-block:last-child { margin-bottom: 0; }
-.ex-jp {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 12.5px;
-  color: var(--ink);
-  line-height: 1.7;
-}
-.ex-en {
-  font-size: 11.5px;
-  color: var(--ink3);
-  font-style: italic;
-  line-height: 1.5;
-}
-
-/* NOTES CELL */
-.note-text {
-  font-size: 12px;
-  color: var(--ink3);
-  line-height: 1.6;
-  font-style: italic;
-  border-left: 2px solid var(--rule);
-  padding-left: 8px;
-}
-
-/* EMPTY */
-.empty-row td {
-  text-align: center;
-  padding: 3rem;
-  color: var(--ink4);
-  font-size: 14px;
-}
-.empty-kanji {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 3rem;
-  display: block;
-  opacity: 0.25;
-  margin-bottom: 0.5rem;
-}
-
-/* ── CALLOUT BOXES ── */
-.callout {
-  border-radius: 6px;
-  padding: 1.25rem 1.5rem;
-  margin: 2rem 0;
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-.callout-icon { font-size: 1.1rem; margin-top: 1px; flex-shrink: 0; }
-
-.callout-body {}
-.callout-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-.callout-text { font-size: 13px; line-height: 1.65; }
-
-.callout-red { background: var(--red-bg); border-left: 3px solid var(--red); }
-.callout-red .callout-title { color: var(--red); }
-.callout-red .callout-text { color: #6b3020; }
-
-.callout-blue { background: var(--blue-bg); border-left: 3px solid var(--blue); }
-.callout-blue .callout-title { color: var(--blue); }
-.callout-blue .callout-text { color: #2a4060; }
-
-.callout-purple { background: var(--purple-bg); border-left: 3px solid var(--purple); }
-.callout-purple .callout-title { color: var(--purple); }
-.callout-purple .callout-text { color: #3d2860; }
-
-/* ── OVERVIEW CARDS ── */
-.overview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-
-.overview-card {
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: white;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-  display: block;
-}
-
-.overview-card:hover {
-  border-color: var(--ink3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
-
-.oc-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--ink4);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-
-.oc-jp {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-
-.oc-en {
-  font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--ink3);
-  margin-bottom: 0.75rem;
-}
-
-.oc-desc {
-  font-size: 12.5px;
-  color: var(--ink3);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.oc-examples {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.oc-pill {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 12px;
-  padding: 3px 10px;
-  border-radius: 2px;
-  background: var(--paper2);
-  color: var(--ink2);
-  border: 1px solid var(--rule);
-}
-
-.oc-s1 { border-top: 3px solid var(--section-1); }
-.oc-s1 .oc-jp { color: var(--section-1); }
-.oc-s2 { border-top: 3px solid var(--section-2); }
-.oc-s2 .oc-jp { color: var(--section-2); }
-.oc-s3 { border-top: 3px solid var(--section-3); }
-.oc-s3 .oc-jp { color: var(--section-3); }
-
-/* ── COMPARISON TABLE ── */
-.compare-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13.5px;
-  margin: 1.5rem 0;
-}
-.compare-table th {
-  background: var(--paper2);
-  padding: 10px 14px;
-  text-align: left;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink3);
-  font-weight: 600;
-  border-bottom: 1.5px solid var(--rule);
-}
-.compare-table td {
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--rule);
-  vertical-align: middle;
-}
-.compare-table tr:last-child td { border-bottom: none; }
-.compare-table .adv-cell {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* LEGEND */
-.legend {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--rule);
-}
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  color: var(--ink3);
-}
-.legend-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 12px;
-  color: var(--ink4);
-  border-top: 1px solid var(--rule);
-  background: var(--paper2);
-}
-
-/* PRINT */
-@media print {
-  .nav-tabs, .controls-bar { display: none; }
-  .hero-bg-text { display: none; }
-  body { background: white; font-size: 12px; }
-  .hero { min-height: auto; padding-bottom: 1.5rem; }
-  .section { page-break-inside: avoid; }
-}
-
-@media (max-width: 640px) {
-  .hero-content { padding: 2rem 1.25rem 1.75rem; }
-  main { padding: 1.5rem 1rem 3rem; }
-  .hero-stats { gap: 1.5rem; }
-  .stat { padding-right: 1.5rem; margin-right: 1.5rem; }
-  td { padding: 10px; }
-}
-</style>
-</head>
-<body>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-bg-text">副詞</div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">
-      <span class="hero-tag">Complete Guide</span>
-      <span class="hero-level">JLPT N5 → N3 · Grammar Reference</span>
-    </div>
-    <h1>Japanese Adverbs<br><em>副詞 完全ガイド</em></h1>
-    <p class="hero-subtitle">All three types · Patterns · Examples · Usage notes</p>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Adverb types</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">55+</div>
-        <div class="stat-label">Adverbs covered</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">N5–N3</div>
-        <div class="stat-label">JLPT levels</div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- NAV -->
-<nav class="nav-tabs" id="navTabs">
-  <button class="nav-tab active" onclick="scrollToSection('overview')">Overview</button>
-  <button class="nav-tab" onclick="scrollToSection('jotai')">① 情態の副詞</button>
-  <button class="nav-tab" onclick="scrollToSection('teido')">② 程度の副詞</button>
-  <button class="nav-tab" onclick="scrollToSection('koou')">③ 呼応の副詞</button>
-  <button class="nav-tab" onclick="scrollToSection('compare')">Quick Compare</button>
-</nav>
-
-<main>
-
-  <!-- OVERVIEW -->
-  <section class="section" id="overview">
-    <div class="section-header">
-      <div class="section-num">00 —</div>
-      <div class="section-title-wrap">
-        <div class="section-jp" style="color:var(--ink)">Three Types of Japanese Adverbs</div>
-        <div class="section-en">副詞の三分類</div>
-        <p class="section-desc">Japanese adverbs are traditionally divided into three categories based on <em>what they modify</em> and <em>what grammatical constraints</em> they carry. Understanding the type helps you use them naturally and avoid errors.</p>
-      </div>
-    </div>
-
-    <div class="overview-grid">
-      <a href="#jotai" class="overview-card oc-s1" onclick="scrollToSection('jotai'); return false;">
-        <div class="oc-num">Type 01</div>
-        <div class="oc-jp">情態の副詞</div>
-        <div class="oc-en">Manner Adverbs</div>
-        <p class="oc-desc">Describe <strong>how</strong> an action is performed. Modify verbs and adjectives. No specific grammatical constraints on what follows — they just describe the manner or style of the action.</p>
-        <div class="oc-examples">
-          <span class="oc-pill">ゆっくり</span>
-          <span class="oc-pill">はっきり</span>
-          <span class="oc-pill">きちんと</span>
-          <span class="oc-pill">どんどん</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japanese Adverbs — Complete Guide | 副詞完全ガイド</title>
+    <meta
+      name="description"
+      content="Complete Japanese adverbs guide covering 情態の副詞, 程度の副詞, and 呼応の副詞 with patterns, examples, and JLPT-focused usage notes."
+    />
+    <meta name="theme-color" content="#0f0e0c" />
+    <link rel="canonical" href="https://sheikhsulaiman.github.io/adverb/" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Japanese Adverbs — Complete Guide | 副詞完全ガイド"
+    />
+    <meta
+      property="og:description"
+      content="Learn the 3 major Japanese adverb types with examples, patterns, and JLPT exam tips."
+    />
+    <meta
+      property="og:url"
+      content="https://sheikhsulaiman.github.io/adverb/"
+    />
+    <meta
+      property="og:image"
+      content="https://sheikhsulaiman.github.io/adverb/images/android-chrome-512x512.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Japanese Adverbs — Complete Guide | 副詞完全ガイド"
+    />
+    <meta
+      name="twitter:description"
+      content="Learn the 3 major Japanese adverb types with examples, patterns, and JLPT exam tips."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sheikhsulaiman.github.io/adverb/images/android-chrome-512x512.png"
+    />
+
+    <link rel="manifest" href="./site.webmanifest" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link rel="icon" href="./images/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --ink: #0f0e0c;
+        --ink2: #3a3730;
+        --ink3: #7a7568;
+        --ink4: #b0a99e;
+        --paper: #faf7f2;
+        --paper2: #f2ede4;
+        --paper3: #e8e1d5;
+        --rule: #ddd6c8;
+
+        --red: #b83a20;
+        --red-bg: #fdf1ee;
+        --red-mid: #e8a090;
+
+        --blue: #1f558a;
+        --blue-bg: #eef4fb;
+        --blue-mid: #8ab0d8;
+
+        --green: #2a6647;
+        --green-bg: #edf5f0;
+        --green-mid: #84c0a0;
+
+        --amber: #8a5412;
+        --amber-bg: #fdf4e8;
+        --amber-mid: #d4a060;
+
+        --purple: #5c3a8a;
+        --purple-bg: #f2eefb;
+        --purple-mid: #a888d8;
+
+        --teal: #1a6870;
+        --teal-bg: #eaf5f6;
+        --teal-mid: #72bcc4;
+
+        --section-1: #b83a20;
+        --section-2: #1f558a;
+        --section-3: #5c3a8a;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.6;
+        font-size: 15px;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .hero-bg-text {
+        position: absolute;
+        top: -0.15em;
+        right: -0.05em;
+        font-family: "Noto Serif JP", serif;
+        font-size: 22vw;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.035);
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+        white-space: nowrap;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        padding: 3rem 3rem 2.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-tag {
+        background: var(--red);
+        color: white;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 2px;
+      }
+
+      .hero-level {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.4);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 400;
+        line-height: 1.05;
+        color: #faf7f2;
+        margin-bottom: 0.6rem;
+      }
+
+      .hero h1 em {
+        font-style: italic;
+        color: rgba(250, 247, 242, 0.55);
+      }
+
+      .hero-subtitle {
+        font-size: 14px;
+        color: rgba(250, 247, 242, 0.5);
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        margin-bottom: 2rem;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .stat {
+        padding: 0 2rem 0 0;
+        margin-right: 2rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .stat:last-child {
+        border-right: none;
+      }
+
+      .stat-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #faf7f2;
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 11px;
+        color: rgba(250, 247, 242, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 4px;
+      }
+
+      /* ── NAV TABS ── */
+      .nav-tabs {
+        background: var(--ink2);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .nav-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-tab {
+        flex-shrink: 0;
+        padding: 14px 24px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(250, 247, 242, 0.45);
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s;
+        white-space: nowrap;
+        border: none;
+        background: none;
+        font-family: "Outfit", sans-serif;
+      }
+
+      .nav-tab:hover {
+        color: rgba(250, 247, 242, 0.8);
+      }
+      .nav-tab.active {
+        color: #faf7f2;
+        border-bottom: 2px solid var(--red);
+      }
+
+      /* ── MAIN ── */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem 5rem;
+      }
+
+      /* ── SECTION HEADERS ── */
+      .section {
+        margin-bottom: 4rem;
+        scroll-margin-top: 60px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--ink4);
+        letter-spacing: 0.1em;
+        margin-top: 6px;
+        white-space: nowrap;
+      }
+
+      .section-title-wrap {
+      }
+
+      .section-jp {
+        font-family: "Noto Serif JP", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 4px;
+      }
+
+      .section-en {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--ink3);
+      }
+
+      .section-desc {
+        font-size: 13.5px;
+        color: var(--ink3);
+        line-height: 1.7;
+        max-width: 680px;
+        margin-top: 0.5rem;
+      }
+
+      /* Color per section */
+      .s1 .section-jp {
+        color: var(--section-1);
+      }
+      .s2 .section-jp {
+        color: var(--section-2);
+      }
+      .s3 .section-jp {
+        color: var(--section-3);
+      }
+
+      /* ── CONTROLS ── */
+      .controls-bar {
+        background: var(--paper2);
+        border: 1px solid var(--rule);
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .search-wrap {
+        position: relative;
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--ink4);
+        font-size: 14px;
+        pointer-events: none;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 9px 12px 9px 36px;
+        border: 1px solid var(--rule);
+        border-radius: 5px;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Outfit", sans-serif;
+        font-size: 13.5px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      input[type="text"]:focus {
+        border-color: var(--ink3);
+      }
+      input[type="text"]::placeholder {
+        color: var(--ink4);
+      }
+
+      .chips {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .chip {
+        padding: 5px 12px;
+        border-radius: 3px;
+        border: 1px solid var(--rule);
+        background: var(--paper);
+        color: var(--ink3);
+        font-family: "Outfit", sans-serif;
+        font-size: 11.5px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s;
+        white-space: nowrap;
+      }
+      .chip:hover {
+        border-color: var(--ink3);
+        color: var(--ink);
+      }
+      .chip.active {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: var(--paper);
+      }
+
+      .result-count {
+        font-size: 12px;
+        color: var(--ink4);
+        font-family: "JetBrains Mono", monospace;
+        white-space: nowrap;
+        align-self: center;
+      }
+
+      /* ── TABLE ── */
+      .table-wrap {
+        border: 1px solid var(--rule);
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13.5px;
+        min-width: 750px;
+      }
+
+      .table-scroll {
+        overflow-x: auto;
+      }
+
+      thead {
+        background: var(--paper2);
+        border-bottom: 1.5px solid var(--rule);
+      }
+
+      thead th {
+        padding: 11px 14px;
+        text-align: left;
+        font-size: 9.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink3);
+        white-space: nowrap;
+      }
+
+      tbody tr {
+        border-bottom: 1px solid #f0ece5;
+        transition: background 0.1s;
+      }
+      tbody tr:last-child {
+        border-bottom: none;
+      }
+      tbody tr:hover {
+        background: var(--paper);
+      }
+
+      td {
+        padding: 13px 14px;
+        vertical-align: top;
+      }
+
+      /* WORD CELL */
+      .word-jp {
+        font-family: "Noto Serif JP", serif;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 3px;
+      }
+      .word-reading {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        color: var(--ink4);
+        letter-spacing: 0.03em;
+      }
+
+      /* BADGE */
+      .badge {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 2px;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+      }
+      .b-jotai {
+        background: #e8f0fb;
+        color: #1f558a;
+      }
+      .b-teido {
+        background: #edf5f0;
+        color: #2a6647;
+      }
+      .b-koou-neg {
+        background: #fdf1ee;
+        color: #b83a20;
+      }
+      .b-koou-pos {
+        background: #f2eefb;
+        color: #5c3a8a;
+      }
+      .b-koou-both {
+        background: #fdf4e8;
+        color: #8a5412;
+      }
+      .b-koou-cond {
+        background: #eaf5f6;
+        color: #1a6870;
+      }
+
+      /* PATTERN */
+      .pattern-line {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--ink3);
+        line-height: 1.6;
+        padding: 1px 0;
+      }
+
+      /* MEANING */
+      .meaning-line {
+        font-size: 13px;
+        color: var(--ink);
+        line-height: 1.5;
+        padding: 1px 0;
+      }
+      .meaning-line::before {
+        content: "• ";
+        color: var(--ink4);
+      }
+
+      /* EXAMPLE */
+      .ex-block {
+        margin-bottom: 9px;
+      }
+      .ex-block:last-child {
+        margin-bottom: 0;
+      }
+      .ex-jp {
+        font-family: "Noto Serif JP", serif;
+        font-size: 12.5px;
+        color: var(--ink);
+        line-height: 1.7;
+      }
+      .ex-en {
+        font-size: 11.5px;
+        color: var(--ink3);
+        font-style: italic;
+        line-height: 1.5;
+      }
+
+      /* NOTES CELL */
+      .note-text {
+        font-size: 12px;
+        color: var(--ink3);
+        line-height: 1.6;
+        font-style: italic;
+        border-left: 2px solid var(--rule);
+        padding-left: 8px;
+      }
+
+      /* EMPTY */
+      .empty-row td {
+        text-align: center;
+        padding: 3rem;
+        color: var(--ink4);
+        font-size: 14px;
+      }
+      .empty-kanji {
+        font-family: "Noto Serif JP", serif;
+        font-size: 3rem;
+        display: block;
+        opacity: 0.25;
+        margin-bottom: 0.5rem;
+      }
+
+      /* ── CALLOUT BOXES ── */
+      .callout {
+        border-radius: 6px;
+        padding: 1.25rem 1.5rem;
+        margin: 2rem 0;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .callout-icon {
+        font-size: 1.1rem;
+        margin-top: 1px;
+        flex-shrink: 0;
+      }
+
+      .callout-body {
+      }
+      .callout-title {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .callout-text {
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .callout-red {
+        background: var(--red-bg);
+        border-left: 3px solid var(--red);
+      }
+      .callout-red .callout-title {
+        color: var(--red);
+      }
+      .callout-red .callout-text {
+        color: #6b3020;
+      }
+
+      .callout-blue {
+        background: var(--blue-bg);
+        border-left: 3px solid var(--blue);
+      }
+      .callout-blue .callout-title {
+        color: var(--blue);
+      }
+      .callout-blue .callout-text {
+        color: #2a4060;
+      }
+
+      .callout-purple {
+        background: var(--purple-bg);
+        border-left: 3px solid var(--purple);
+      }
+      .callout-purple .callout-title {
+        color: var(--purple);
+      }
+      .callout-purple .callout-text {
+        color: #3d2860;
+      }
+
+      /* ── OVERVIEW CARDS ── */
+      .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .overview-card {
+        border: 1px solid var(--rule);
+        border-radius: 8px;
+        padding: 1.5rem;
+        background: white;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        display: block;
+      }
+
+      .overview-card:hover {
+        border-color: var(--ink3);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      }
+
+      .oc-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        color: var(--ink4);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+      }
+
+      .oc-jp {
+        font-family: "Noto Serif JP", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .oc-en {
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--ink3);
+        margin-bottom: 0.75rem;
+      }
+
+      .oc-desc {
+        font-size: 12.5px;
+        color: var(--ink3);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .oc-examples {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .oc-pill {
+        font-family: "Noto Serif JP", serif;
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 2px;
+        background: var(--paper2);
+        color: var(--ink2);
+        border: 1px solid var(--rule);
+      }
+
+      .oc-s1 {
+        border-top: 3px solid var(--section-1);
+      }
+      .oc-s1 .oc-jp {
+        color: var(--section-1);
+      }
+      .oc-s2 {
+        border-top: 3px solid var(--section-2);
+      }
+      .oc-s2 .oc-jp {
+        color: var(--section-2);
+      }
+      .oc-s3 {
+        border-top: 3px solid var(--section-3);
+      }
+      .oc-s3 .oc-jp {
+        color: var(--section-3);
+      }
+
+      /* ── COMPARISON TABLE ── */
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13.5px;
+        margin: 1.5rem 0;
+      }
+      .compare-table th {
+        background: var(--paper2);
+        padding: 10px 14px;
+        text-align: left;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink3);
+        font-weight: 600;
+        border-bottom: 1.5px solid var(--rule);
+      }
+      .compare-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--rule);
+        vertical-align: middle;
+      }
+      .compare-table tr:last-child td {
+        border-bottom: none;
+      }
+      .compare-table .adv-cell {
+        font-family: "Noto Serif JP", serif;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      /* LEGEND */
+      .legend {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--rule);
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        color: var(--ink3);
+      }
+      .legend-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 12px;
+        color: var(--ink4);
+        border-top: 1px solid var(--rule);
+        background: var(--paper2);
+      }
+
+      /* PRINT */
+      @media print {
+        .nav-tabs,
+        .controls-bar {
+          display: none;
+        }
+        .hero-bg-text {
+          display: none;
+        }
+        body {
+          background: white;
+          font-size: 12px;
+        }
+        .hero {
+          min-height: auto;
+          padding-bottom: 1.5rem;
+        }
+        .section {
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-content {
+          padding: 2rem 1.25rem 1.75rem;
+        }
+        main {
+          padding: 1.5rem 1rem 3rem;
+        }
+        .hero-stats {
+          gap: 1.5rem;
+        }
+        .stat {
+          padding-right: 1.5rem;
+          margin-right: 1.5rem;
+        }
+        td {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-bg-text">副詞</div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="hero-tag">Complete Guide</span>
+          <span class="hero-level">JLPT N5 → N3 · Grammar Reference</span>
         </div>
-      </a>
-      <a href="#teido" class="overview-card oc-s2" onclick="scrollToSection('teido'); return false;">
-        <div class="oc-num">Type 02</div>
-        <div class="oc-jp">程度の副詞</div>
-        <div class="oc-en">Degree Adverbs</div>
-        <p class="oc-desc">Describe <strong>how much / how intense</strong> something is. Typically modify adjectives and adjectival verbs. Show the scale or degree of a quality or state.</p>
-        <div class="oc-examples">
-          <span class="oc-pill">とても</span>
-          <span class="oc-pill">少し</span>
-          <span class="oc-pill">かなり</span>
-          <span class="oc-pill">もっと</span>
-        </div>
-      </a>
-      <a href="#koou" class="overview-card oc-s3" onclick="scrollToSection('koou'); return false;">
-        <div class="oc-num">Type 03</div>
-        <div class="oc-jp">呼応の副詞</div>
-        <div class="oc-en">Correlative Adverbs</div>
-        <p class="oc-desc"><strong>Must pair</strong> with a specific predicate ending. The adverb "calls" and the sentence ending "responds." Using the wrong ending is a grammar error. Also called 陳述の副詞.</p>
-        <div class="oc-examples">
-          <span class="oc-pill">ぜんぜん</span>
-          <span class="oc-pill">たぶん</span>
-          <span class="oc-pill">もし</span>
-          <span class="oc-pill">たとえ</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════ -->
-  <!-- TYPE 1: 情態の副詞              -->
-  <!-- ════════════════════════════════ -->
-  <section class="section s1" id="jotai">
-    <div class="section-header">
-      <div class="section-num">01 —</div>
-      <div class="section-title-wrap">
-        <div class="section-jp">情態の副詞</div>
-        <div class="section-en">Manner Adverbs — "how" something is done</div>
-        <p class="section-desc">These adverbs modify verbs or adjectives to describe the <em>manner, state, or style</em> of an action. Many are mimetic words (擬態語). They are the most flexible type — no special grammatical constraints on the predicate.</p>
-      </div>
-    </div>
-
-    <div class="callout callout-red">
-      <span class="callout-icon">💡</span>
-      <div class="callout-body">
-        <div class="callout-title">Key feature</div>
-        <div class="callout-text">情態の副詞 often end in <strong>〜り</strong> (ゆっくり、はっきり) or <strong>〜と</strong> (きちんと、しっかりと). Many overlap with mimetic words (オノマトペ). They freely modify any verb without constraints.</div>
-      </div>
-    </div>
-
-    <div class="controls-bar">
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="search1" placeholder="Search…" oninput="filterTable('tbody1','search1','chips1')">
-      </div>
-      <div class="chips" id="chips1">
-        <button class="chip active" data-filter="all" onclick="setChip(this,'tbody1','search1','chips1')">All</button>
-        <button class="chip" data-filter="manner" onclick="setChip(this,'tbody1','search1','chips1')">Manner</button>
-        <button class="chip" data-filter="mimetic" onclick="setChip(this,'tbody1','search1','chips1')">Mimetic</button>
-        <button class="chip" data-filter="state" onclick="setChip(this,'tbody1','search1','chips1')">State</button>
-      </div>
-      <span class="result-count" id="count1"></span>
-    </div>
-
-    <div class="table-scroll"><div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:110px">Adverb</th>
-            <th style="width:80px">Sub-type</th>
-            <th style="width:190px">Pattern</th>
-            <th style="width:180px">Meaning</th>
-            <th>Example</th>
-            <th style="width:150px">Notes</th>
-          </tr>
-        </thead>
-        <tbody id="tbody1"></tbody>
-      </table>
-    </div></div>
-
-    <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#1f558a"></div>Manner</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#2a6647"></div>Mimetic</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#8a5412"></div>State</div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════ -->
-  <!-- TYPE 2: 程度の副詞              -->
-  <!-- ════════════════════════════════ -->
-  <section class="section s2" id="teido">
-    <div class="section-header">
-      <div class="section-num">02 —</div>
-      <div class="section-title-wrap">
-        <div class="section-jp">程度の副詞</div>
-        <div class="section-en">Degree Adverbs — "how much / how intense"</div>
-        <p class="section-desc">These adverbs show the <em>degree or intensity</em> of an adjective or verb. They sit on a scale from very low (ほとんど, 少し) to very high (とても, 非常に). Many pair naturally with both positive and negative predicates.</p>
-      </div>
-    </div>
-
-    <div class="callout callout-blue">
-      <span class="callout-icon">📊</span>
-      <div class="callout-body">
-        <div class="callout-title">Intensity scale</div>
-        <div class="callout-text">
-          <strong>High →</strong> 非常に &gt; すごく &gt; とても &gt; かなり &gt; だいぶ &gt; けっこう<br>
-          <strong>Low →</strong> 少し &gt; ちょっと &gt; あまり（＋否定）&gt; ほとんど（＋否定）
-        </div>
-      </div>
-    </div>
-
-    <div class="controls-bar">
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="search2" placeholder="Search…" oninput="filterTable('tbody2','search2','chips2')">
-      </div>
-      <div class="chips" id="chips2">
-        <button class="chip active" data-filter="all" onclick="setChip(this,'tbody2','search2','chips2')">All</button>
-        <button class="chip" data-filter="high" onclick="setChip(this,'tbody2','search2','chips2')">High degree</button>
-        <button class="chip" data-filter="low" onclick="setChip(this,'tbody2','search2','chips2')">Low degree</button>
-        <button class="chip" data-filter="comparative" onclick="setChip(this,'tbody2','search2','chips2')">Comparative</button>
-      </div>
-      <span class="result-count" id="count2"></span>
-    </div>
-
-    <div class="table-scroll"><div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:110px">Adverb</th>
-            <th style="width:90px">Sub-type</th>
-            <th style="width:190px">Pattern</th>
-            <th style="width:180px">Meaning</th>
-            <th>Example</th>
-            <th style="width:150px">Notes</th>
-          </tr>
-        </thead>
-        <tbody id="tbody2"></tbody>
-      </table>
-    </div></div>
-
-    <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#b83a20"></div>High degree</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#1a6870"></div>Low degree</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#5c3a8a"></div>Comparative</div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════ -->
-  <!-- TYPE 3: 呼応の副詞              -->
-  <!-- ════════════════════════════════ -->
-  <section class="section s3" id="koou">
-    <div class="section-header">
-      <div class="section-num">03 —</div>
-      <div class="section-title-wrap">
-        <div class="section-jp">呼応の副詞</div>
-        <div class="section-en">Correlative Adverbs — must "call and respond"</div>
-        <p class="section-desc">Also called <strong>陳述の副詞</strong>. These adverbs <em>require</em> a specific predicate ending. The adverb triggers a grammatical obligation. Using the wrong ending is incorrect Japanese — this is a very common JLPT exam point.</p>
-      </div>
-    </div>
-
-    <div class="callout callout-purple">
-      <span class="callout-icon">⚠️</span>
-      <div class="callout-body">
-        <div class="callout-title">JLPT Exam Alert</div>
-        <div class="callout-text">呼応の副詞 are frequently tested in N4–N3 grammar questions. A typical question shows the adverb and asks you to choose the correct sentence ending. Memorise the pairs — not just the adverbs alone.</div>
-      </div>
-    </div>
-
-    <div class="controls-bar">
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="search3" placeholder="Search…" oninput="filterTable('tbody3','search3','chips3')">
-      </div>
-      <div class="chips" id="chips3">
-        <button class="chip active" data-filter="all" onclick="setChip(this,'tbody3','search3','chips3')">All</button>
-        <button class="chip" data-filter="negative" onclick="setChip(this,'tbody3','search3','chips3')">＋Negative</button>
-        <button class="chip" data-filter="probability" onclick="setChip(this,'tbody3','search3','chips3')">Probability</button>
-        <button class="chip" data-filter="conditional" onclick="setChip(this,'tbody3','search3','chips3')">Conditional</button>
-        <button class="chip" data-filter="both" onclick="setChip(this,'tbody3','search3','chips3')">Neg + Pos</button>
-      </div>
-      <span class="result-count" id="count3"></span>
-    </div>
-
-    <div class="table-scroll"><div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:120px">Adverb</th>
-            <th style="width:100px">Sub-type</th>
-            <th style="width:200px">Required Pattern</th>
-            <th style="width:180px">Meaning</th>
-            <th>Example</th>
-            <th style="width:150px">Notes</th>
-          </tr>
-        </thead>
-        <tbody id="tbody3"></tbody>
-      </table>
-    </div></div>
-
-    <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#b83a20"></div>Negative pattern</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#5c3a8a"></div>Probability</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#1a6870"></div>Conditional</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#8a5412"></div>Neg + Pos (dual)</div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════ -->
-  <!-- QUICK COMPARE                   -->
-  <!-- ════════════════════════════════ -->
-  <section class="section" id="compare">
-    <div class="section-header">
-      <div class="section-num">04 —</div>
-      <div class="section-title-wrap">
-        <div class="section-jp" style="color:var(--ink)">Quick Comparison</div>
-        <div class="section-en">Side-by-side type summary</div>
-        <p class="section-desc">Use this table to quickly identify which type an adverb belongs to and whether it carries grammatical constraints.</p>
-      </div>
-    </div>
-
-    <div class="table-scroll"><div class="table-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Type (Japanese)</th>
-            <th>English Name</th>
-            <th>Modifies</th>
-            <th>Predicate Constraint?</th>
-            <th>Examples</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="adv-cell" style="color:var(--section-1)">情態の副詞</span></td>
-            <td>Manner Adverbs</td>
-            <td>Verbs, adjectives</td>
-            <td style="color:var(--green)">✔ None — free</td>
-            <td style="font-family:'Noto Serif JP',serif">ゆっくり、はっきり、どんどん</td>
-          </tr>
-          <tr>
-            <td><span class="adv-cell" style="color:var(--section-2)">程度の副詞</span></td>
-            <td>Degree Adverbs</td>
-            <td>Adjectives, adjectival verbs</td>
-            <td style="color:var(--green)">✔ Mostly free</td>
-            <td style="font-family:'Noto Serif JP',serif">とても、かなり、少し</td>
-          </tr>
-          <tr>
-            <td><span class="adv-cell" style="color:var(--section-3)">呼応の副詞</span></td>
-            <td>Correlative Adverbs</td>
-            <td>Entire predicate</td>
-            <td style="color:var(--red)">⚠ Required pairing</td>
-            <td style="font-family:'Noto Serif JP',serif">ぜんぜん＋ない、たぶん＋でしょう</td>
-          </tr>
-        </tbody>
-      </table>
-    </div></div>
-
-    <div class="callout callout-red" style="margin-top:2rem">
-      <span class="callout-icon">📝</span>
-      <div class="callout-body">
-        <div class="callout-title">Exam tip — spotting the type quickly</div>
-        <div class="callout-text">
-          If the adverb ends in <strong>〜り / 〜と / 〜に</strong> and describes a motion or state → likely 情態.<br>
-          If it can be replaced by "very" or "a little" → likely 程度.<br>
-          If removing the sentence ending makes the sentence feel broken or wrong → definitely 呼応.
+        <h1>Japanese Adverbs<br /><em>副詞 完全ガイド</em></h1>
+        <p class="hero-subtitle">
+          All three types · Patterns · Examples · Usage notes
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Adverb types</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">55+</div>
+            <div class="stat-label">Adverbs covered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">N5–N3</div>
+            <div class="stat-label">JLPT levels</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-</main>
+    <!-- NAV -->
+    <nav class="nav-tabs" id="navTabs">
+      <button class="nav-tab active" onclick="scrollToSection('overview')">
+        Overview
+      </button>
+      <button class="nav-tab" onclick="scrollToSection('jotai')">
+        ① 情態の副詞
+      </button>
+      <button class="nav-tab" onclick="scrollToSection('teido')">
+        ② 程度の副詞
+      </button>
+      <button class="nav-tab" onclick="scrollToSection('koou')">
+        ③ 呼応の副詞
+      </button>
+      <button class="nav-tab" onclick="scrollToSection('compare')">
+        Quick Compare
+      </button>
+    </nav>
 
-<footer>
-  日本語副詞 完全ガイド &nbsp;·&nbsp; Japanese Adverbs Complete Reference &nbsp;·&nbsp; JLPT N5–N3
-</footer>
+    <main>
+      <!-- OVERVIEW -->
+      <section class="section" id="overview">
+        <div class="section-header">
+          <div class="section-num">00 —</div>
+          <div class="section-title-wrap">
+            <div class="section-jp" style="color: var(--ink)">
+              Three Types of Japanese Adverbs
+            </div>
+            <div class="section-en">副詞の三分類</div>
+            <p class="section-desc">
+              Japanese adverbs are traditionally divided into three categories
+              based on <em>what they modify</em> and
+              <em>what grammatical constraints</em> they carry. Understanding
+              the type helps you use them naturally and avoid errors.
+            </p>
+          </div>
+        </div>
 
-<script>
-/* ═══════════════ DATA ═══════════════ */
+        <div class="overview-grid">
+          <a
+            href="#jotai"
+            class="overview-card oc-s1"
+            onclick="
+              scrollToSection('jotai');
+              return false;
+            "
+          >
+            <div class="oc-num">Type 01</div>
+            <div class="oc-jp">情態の副詞</div>
+            <div class="oc-en">Manner Adverbs</div>
+            <p class="oc-desc">
+              Describe <strong>how</strong> an action is performed. Modify verbs
+              and adjectives. No specific grammatical constraints on what
+              follows — they just describe the manner or style of the action.
+            </p>
+            <div class="oc-examples">
+              <span class="oc-pill">ゆっくり</span>
+              <span class="oc-pill">はっきり</span>
+              <span class="oc-pill">きちんと</span>
+              <span class="oc-pill">どんどん</span>
+            </div>
+          </a>
+          <a
+            href="#teido"
+            class="overview-card oc-s2"
+            onclick="
+              scrollToSection('teido');
+              return false;
+            "
+          >
+            <div class="oc-num">Type 02</div>
+            <div class="oc-jp">程度の副詞</div>
+            <div class="oc-en">Degree Adverbs</div>
+            <p class="oc-desc">
+              Describe <strong>how much / how intense</strong> something is.
+              Typically modify adjectives and adjectival verbs. Show the scale
+              or degree of a quality or state.
+            </p>
+            <div class="oc-examples">
+              <span class="oc-pill">とても</span>
+              <span class="oc-pill">少し</span>
+              <span class="oc-pill">かなり</span>
+              <span class="oc-pill">もっと</span>
+            </div>
+          </a>
+          <a
+            href="#koou"
+            class="overview-card oc-s3"
+            onclick="
+              scrollToSection('koou');
+              return false;
+            "
+          >
+            <div class="oc-num">Type 03</div>
+            <div class="oc-jp">呼応の副詞</div>
+            <div class="oc-en">Correlative Adverbs</div>
+            <p class="oc-desc">
+              <strong>Must pair</strong> with a specific predicate ending. The
+              adverb "calls" and the sentence ending "responds." Using the wrong
+              ending is a grammar error. Also called 陳述の副詞.
+            </p>
+            <div class="oc-examples">
+              <span class="oc-pill">ぜんぜん</span>
+              <span class="oc-pill">たぶん</span>
+              <span class="oc-pill">もし</span>
+              <span class="oc-pill">たとえ</span>
+            </div>
+          </a>
+        </div>
+      </section>
 
-const jotaiData = [
-  { word:'ゆっくり', reading:'yukkuri', subtype:'manner', subtypeName:'Manner', badgeClass:'b-jotai',
-    patterns:['ゆっくり＋動詞'], meanings:['slowly, at a relaxed pace'],
-    examples:[{jp:'もっとゆっくり話してください。',en:'Please speak more slowly.'}],
-    note:'Very common. Used for speed, pace, or rest (ゆっくり休む).' },
-  { word:'はっきり', reading:'hakkiri', subtype:'manner', subtypeName:'Manner', badgeClass:'b-jotai',
-    patterns:['はっきり＋動詞（言う・見える）'], meanings:['clearly, distinctly'],
-    examples:[{jp:'はっきり言ってください。',en:'Please say it clearly.'}],
-    note:'Often with 言う (say) or 見える (can see).' },
-  { word:'きちんと', reading:'kichinto', subtype:'manner', subtypeName:'Manner', badgeClass:'b-jotai',
-    patterns:['きちんと＋動詞'], meanings:['properly, neatly, correctly'],
-    examples:[{jp:'部屋をきちんと片付けた。',en:'I tidied the room properly.'}],
-    note:'Implies doing things the right way.' },
-  { word:'しっかり', reading:'shikkari', subtype:'manner', subtypeName:'Manner', badgeClass:'b-jotai',
-    patterns:['しっかり＋動詞'], meanings:['firmly, solidly, properly'],
-    examples:[{jp:'しっかり食べてね。',en:'Make sure to eat properly.'}],
-    note:'Implies reliability or firmness.' },
-  { word:'どんどん', reading:'dondon', subtype:'mimetic', subtypeName:'Mimetic', badgeClass:'b-teido',
-    patterns:['どんどん＋動詞'], meanings:['rapidly, one after another, progressively'],
-    examples:[{jp:'仕事がどんどん増えている。',en:'The work is increasing rapidly.'}],
-    note:'擬態語. Shows continuous rapid increase/progress.' },
-  { word:'だんだん', reading:'dandan', subtype:'mimetic', subtypeName:'Mimetic', badgeClass:'b-teido',
-    patterns:['だんだん＋動詞・形容詞'], meanings:['gradually, little by little'],
-    examples:[{jp:'だんだん暖かくなってきた。',en:'It has gradually become warmer.'}],
-    note:'Slow progressive change over time.' },
-  { word:'ちゃんと', reading:'chanto', subtype:'manner', subtypeName:'Manner', badgeClass:'b-jotai',
-    patterns:['ちゃんと＋動詞'], meanings:['properly, correctly (casual)'],
-    examples:[{jp:'ちゃんと宿題をしなさい。',en:'Do your homework properly.'}],
-    note:'More casual than きちんと. Common in spoken Japanese.' },
-  { word:'そっと', reading:'sotto', subtype:'manner', subtypeName:'Manner', badgeClass:'b-jotai',
-    patterns:['そっと＋動詞'], meanings:['gently, quietly, softly'],
-    examples:[{jp:'ドアをそっと閉めた。',en:'I closed the door gently.'}],
-    note:'Implies care not to make noise or disturb.' },
-  { word:'すらすら', reading:'surasura', subtype:'mimetic', subtypeName:'Mimetic', badgeClass:'b-teido',
-    patterns:['すらすら＋動詞'], meanings:['smoothly, fluently'],
-    examples:[{jp:'日本語がすらすら読める。',en:'I can read Japanese fluently.'}],
-    note:'Describes smooth, effortless performance.' },
-  { word:'ぐっすり', reading:'gussuri', subtype:'state', subtypeName:'State', badgeClass:'b-koou-both',
-    patterns:['ぐっすり＋眠る'], meanings:['soundly (asleep), deeply'],
-    examples:[{jp:'ゆうべはぐっすり眠れた。',en:'I slept soundly last night.'}],
-    note:'Almost exclusively used with 眠る/寝る.' },
-  { word:'わざわざ', reading:'wazawaza', subtype:'manner', subtypeName:'Manner', badgeClass:'b-jotai',
-    patterns:['わざわざ＋動詞'], meanings:['going out of one\'s way to, deliberately'],
-    examples:[{jp:'わざわざ来てくれてありがとう。',en:'Thank you for coming all the way.'}],
-    note:'Implies effort or inconvenience taken for someone.' },
-  { word:'急に', reading:'kyuu ni', subtype:'state', subtypeName:'State', badgeClass:'b-koou-both',
-    patterns:['急に＋動詞'], meanings:['suddenly, abruptly'],
-    examples:[{jp:'急に雨が降り出した。',en:'It suddenly started raining.'}],
-    note:'Common in N5–N4.' },
-  { word:'自然に', reading:'shizen ni', subtype:'state', subtypeName:'State', badgeClass:'b-koou-both',
-    patterns:['自然に＋動詞'], meanings:['naturally, spontaneously'],
-    examples:[{jp:'自然に笑顔になった。',en:'I naturally started smiling.'}],
-    note:'' },
-  { word:'特に', reading:'toku ni', subtype:'manner', subtypeName:'Manner', badgeClass:'b-jotai',
-    patterns:['特に＋動詞・形容詞'], meanings:['especially, particularly'],
-    examples:[{jp:'特に問題はありません。',en:'There is no particular problem.'}],
-    note:'Common in both positive and negative contexts.' },
-];
+      <!-- ════════════════════════════════ -->
+      <!-- TYPE 1: 情態の副詞              -->
+      <!-- ════════════════════════════════ -->
+      <section class="section s1" id="jotai">
+        <div class="section-header">
+          <div class="section-num">01 —</div>
+          <div class="section-title-wrap">
+            <div class="section-jp">情態の副詞</div>
+            <div class="section-en">
+              Manner Adverbs — "how" something is done
+            </div>
+            <p class="section-desc">
+              These adverbs modify verbs or adjectives to describe the
+              <em>manner, state, or style</em> of an action. Many are mimetic
+              words (擬態語). They are the most flexible type — no special
+              grammatical constraints on the predicate.
+            </p>
+          </div>
+        </div>
 
-const teidoData = [
-  { word:'とても', reading:'totemo', subtype:'high', subtypeName:'High degree', badgeClass:'b-jotai',
-    patterns:['とても＋形容詞'], meanings:['very, extremely'],
-    examples:[{jp:'今日はとても暑い。',en:'It is very hot today.'}],
-    note:'N5 basic. Only positive predicates.' },
-  { word:'すごく', reading:'sugoku', subtype:'high', subtypeName:'High degree', badgeClass:'b-jotai',
-    patterns:['すごく＋形容詞'], meanings:['very, incredibly (casual)'],
-    examples:[{jp:'すごく楽しかった！',en:'It was incredibly fun!'}],
-    note:'Casual equivalent of とても.' },
-  { word:'非常に', reading:'hijou ni', subtype:'high', subtypeName:'High degree', badgeClass:'b-jotai',
-    patterns:['非常に＋形容詞・副詞'], meanings:['extremely, very (formal)'],
-    examples:[{jp:'非常に重要な問題です。',en:'This is an extremely important issue.'}],
-    note:'Formal/written style. N3 level.' },
-  { word:'かなり', reading:'kanari', subtype:'high', subtypeName:'High degree', badgeClass:'b-jotai',
-    patterns:['かなり＋形容詞・動詞'], meanings:['considerably, quite, fairly'],
-    examples:[{jp:'かなり難しい試験だった。',en:'It was a considerably difficult exam.'}],
-    note:'Implies more than expected.' },
-  { word:'だいぶ', reading:'daibu', subtype:'high', subtypeName:'High degree', badgeClass:'b-jotai',
-    patterns:['だいぶ＋形容詞'], meanings:['considerably, to a great extent'],
-    examples:[{jp:'だいぶ上手になりましたね。',en:'You have improved considerably.'}],
-    note:'Often signals noticeable change over time.' },
-  { word:'けっこう', reading:'kekkou', subtype:'high', subtypeName:'High degree', badgeClass:'b-jotai',
-    patterns:['けっこう＋形容詞'], meanings:['fairly, quite, rather (surprisingly so)'],
-    examples:[{jp:'けっこう辛い料理だった。',en:'It was quite a spicy dish.'}],
-    note:'Often implies mild surprise at the degree.' },
-  { word:'少し', reading:'sukoshi', subtype:'low', subtypeName:'Low degree', badgeClass:'b-teido',
-    patterns:['少し＋形容詞・動詞'], meanings:['a little, slightly'],
-    examples:[{jp:'少し待ってください。',en:'Please wait a little.'}],
-    note:'N5 basic.' },
-  { word:'ちょっと', reading:'chotto', subtype:'low', subtypeName:'Low degree', badgeClass:'b-teido',
-    patterns:['ちょっと＋形容詞・動詞'], meanings:['a bit, a little (casual)'],
-    examples:[{jp:'ちょっと疲れた。',en:'I\'m a little tired.'}],
-    note:'Casual. Also used to soften refusals (ちょっと…).' },
-  { word:'もっと', reading:'motto', subtype:'comparative', subtypeName:'Comparative', badgeClass:'b-koou-pos',
-    patterns:['もっと＋形容詞・動詞'], meanings:['more (than now / than before)'],
-    examples:[{jp:'もっと練習が必要だ。',en:'More practice is needed.'}],
-    note:'Always implies comparison to a current state.' },
-  { word:'ずっと', reading:'zutto', subtype:'comparative', subtypeName:'Comparative', badgeClass:'b-koou-pos',
-    patterns:['ずっと＋比較形容詞', 'ずっと＋継続動詞'],
-    meanings:['far (more), by far', 'the whole time, all along'],
-    examples:[{jp:'彼女のほうがずっと上手だ。',en:'She is far better.'},{jp:'ずっと待っていた。',en:'I was waiting the whole time.'}],
-    note:'Dual use: degree (comparison) + duration.' },
-  { word:'ほとんど', reading:'hotondo', subtype:'low', subtypeName:'Low degree', badgeClass:'b-teido',
-    patterns:['ほとんど＋否定', 'ほとんど＋肯定（数量）'],
-    meanings:['almost (none/not)', 'almost all / nearly'],
-    examples:[{jp:'ほとんど食べなかった。',en:'I ate almost nothing.'},{jp:'ほとんどの人が知っている。',en:'Almost everyone knows.'}],
-    note:'Used with both positive and negative predicates depending on meaning.' },
-  { word:'まあまあ', reading:'maamaa', subtype:'low', subtypeName:'Low degree', badgeClass:'b-teido',
-    patterns:['まあまあ＋形容詞'], meanings:['so-so, fairly, passably'],
-    examples:[{jp:'まあまあ上手にできた。',en:'I did it fairly well.'}],
-    note:'Indicates mediocre or middling degree.' },
-  { word:'十分に', reading:'juubun ni', subtype:'high', subtypeName:'High degree', badgeClass:'b-jotai',
-    patterns:['十分に＋動詞・形容詞'], meanings:['sufficiently, enough, fully'],
-    examples:[{jp:'十分に準備しました。',en:'I prepared sufficiently.'}],
-    note:'' },
-];
+        <div class="callout callout-red">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <div class="callout-title">Key feature</div>
+            <div class="callout-text">
+              情態の副詞 often end in <strong>〜り</strong> (ゆっくり、はっきり)
+              or <strong>〜と</strong> (きちんと、しっかりと). Many overlap with
+              mimetic words (オノマトペ). They freely modify any verb without
+              constraints.
+            </div>
+          </div>
+        </div>
 
-const koouData = [
-  { word:'ぜんぜん', reading:'zenzen', subtype:'negative', subtypeName:'Negative', badgeClass:'b-koou-neg',
-    patterns:['ぜんぜん＋否定'], meanings:['not at all, not in the least'],
-    examples:[{jp:'ぜんぜん分からない。',en:'I don\'t understand at all.'}],
-    note:'Classic 呼応. Positive predicate is an error (informal exceptions exist in modern speech).' },
-  { word:'あまり', reading:'amari', subtype:'negative', subtypeName:'Negative', badgeClass:'b-koou-neg',
-    patterns:['あまり＋否定'], meanings:['not very, not much'],
-    examples:[{jp:'あまり好きじゃない。',en:'I don\'t like it very much.'}],
-    note:'Softer negation than ぜんぜん.' },
-  { word:'なかなか', reading:'nakanaka', subtype:'both', subtypeName:'Neg + Pos', badgeClass:'b-koou-both',
-    patterns:['なかなか＋否定 (won\'t easily)', 'なかなか＋肯定 (quite)'],
-    meanings:['(neg) just won\'t, not easily', '(pos) quite, rather, pretty good'],
-    examples:[{jp:'バスがなかなか来なかった。',en:'The bus just wouldn\'t come.'},{jp:'なかなか面白い映画だ。',en:'It\'s quite an interesting film.'}],
-    note:'Dual-use adverb. Meaning flips with positive/negative predicate.' },
-  { word:'めったに', reading:'metta ni', subtype:'negative', subtypeName:'Negative', badgeClass:'b-koou-neg',
-    patterns:['めったに＋否定'], meanings:['rarely, seldom, hardly ever'],
-    examples:[{jp:'めったに遅刻しない。',en:'I am rarely late.'}],
-    note:'Stronger rarity than あまり.' },
-  { word:'たぶん', reading:'tabun', subtype:'probability', subtypeName:'Probability', badgeClass:'b-koou-pos',
-    patterns:['たぶん＋でしょう・だろう'],
-    meanings:['probably, perhaps (~60–70%)'],
-    examples:[{jp:'たぶん彼は来るでしょう。',en:'He will probably come.'}],
-    note:'Medium certainty. Always with speculative ending.' },
-  { word:'きっと', reading:'kitto', subtype:'probability', subtypeName:'Probability', badgeClass:'b-koou-pos',
-    patterns:['きっと＋はずだ・でしょう'],
-    meanings:['surely, certainly (~80–90%)'],
-    examples:[{jp:'きっと大丈夫ですよ。',en:'I\'m sure it\'ll be okay.'}],
-    note:'Higher certainty than たぶん. Speaker\'s conviction.' },
-  { word:'おそらく', reading:'osoraku', subtype:'probability', subtypeName:'Probability', badgeClass:'b-koou-pos',
-    patterns:['おそらく＋でしょう・だろう'],
-    meanings:['probably, presumably (formal)'],
-    examples:[{jp:'おそらく明日は雨でしょう。',en:'It will probably rain tomorrow.'}],
-    note:'Formal version of たぶん. N3 level.' },
-  { word:'かならず', reading:'kanarazu', subtype:'probability', subtypeName:'Probability', badgeClass:'b-koou-pos',
-    patterns:['かならず＋肯定'],
-    meanings:['certainly, without fail, always'],
-    examples:[{jp:'かならず電話します。',en:'I will definitely call you.'}],
-    note:'Speaker\'s strong commitment or expectation.' },
-  { word:'もし', reading:'moshi', subtype:'conditional', subtypeName:'Conditional', badgeClass:'b-koou-cond',
-    patterns:['もし〜たら・ば・と・なら'],
-    meanings:['if (hypothetical)'],
-    examples:[{jp:'もし雨が降ったら、家にいます。',en:'If it rains, I\'ll stay home.'}],
-    note:'Must be followed by a conditional form. Pairs with all conditional forms.' },
-  { word:'たとえ', reading:'tatoe', subtype:'conditional', subtypeName:'Conditional', badgeClass:'b-koou-cond',
-    patterns:['たとえ〜ても・でも'],
-    meanings:['even if, even though'],
-    examples:[{jp:'たとえ雨でも行きます。',en:'Even if it rains, I\'ll go.'}],
-    note:'Always pairs with 〜ても / でも. Strong resolve.' },
-  { word:'まだ', reading:'mada', subtype:'both', subtypeName:'Neg + Pos', badgeClass:'b-koou-both',
-    patterns:['まだ＋肯定 (still ongoing)', 'まだ＋否定 (not yet)'],
-    meanings:['still (positive)', 'not yet (negative)'],
-    examples:[{jp:'まだ食べています。',en:'I am still eating.'},{jp:'まだ終わっていない。',en:'It\'s not finished yet.'}],
-    note:'Critical dual-use word. Predicate polarity changes the meaning completely.' },
-  { word:'もう', reading:'mou', subtype:'both', subtypeName:'Neg + Pos', badgeClass:'b-koou-both',
-    patterns:['もう＋肯定 (already)', 'もう＋否定 (no more/longer)'],
-    meanings:['already (positive)', 'no longer / not anymore (negative)'],
-    examples:[{jp:'もう食べました。',en:'I already ate.'},{jp:'もう食べたくない。',en:'I don\'t want to eat anymore.'}],
-    note:'Contrasts with まだ. Key N5 grammar.' },
-  { word:'ぜひ', reading:'zehi', subtype:'probability', subtypeName:'Positive', badgeClass:'b-koou-pos',
-    patterns:['ぜひ＋肯定（依頼・意志）'],
-    meanings:['by all means, please do, definitely'],
-    examples:[{jp:'ぜひ来てください。',en:'Please come, by all means.'}],
-    note:'Strong positive request. Never with negative predicates.' },
-  { word:'まるで', reading:'marude', subtype:'conditional', subtypeName:'Simile', badgeClass:'b-koou-cond',
-    patterns:['まるで〜みたいだ・ようだ'],
-    meanings:['just like, as if, as though'],
-    examples:[{jp:'まるで夢のようだ。',en:'It\'s just like a dream.'}],
-    note:'Must pair with みたいだ or ようだ. N3 simile.' },
-  { word:'どうせ', reading:'douse', subtype:'negative', subtypeName:'Negative', badgeClass:'b-koou-neg',
-    patterns:['どうせ＋否定・諦め表現'],
-    meanings:['anyway, in any case (resigned nuance)'],
-    examples:[{jp:'どうせうまくいかないよ。',en:'It won\'t work out anyway.'}],
-    note:'Carries a resigned or cynical nuance. N3.' },
-];
+        <div class="controls-bar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              id="search1"
+              placeholder="Search…"
+              oninput="filterTable('tbody1', 'search1', 'chips1')"
+            />
+          </div>
+          <div class="chips" id="chips1">
+            <button
+              class="chip active"
+              data-filter="all"
+              onclick="setChip(this, 'tbody1', 'search1', 'chips1')"
+            >
+              All
+            </button>
+            <button
+              class="chip"
+              data-filter="manner"
+              onclick="setChip(this, 'tbody1', 'search1', 'chips1')"
+            >
+              Manner
+            </button>
+            <button
+              class="chip"
+              data-filter="mimetic"
+              onclick="setChip(this, 'tbody1', 'search1', 'chips1')"
+            >
+              Mimetic
+            </button>
+            <button
+              class="chip"
+              data-filter="state"
+              onclick="setChip(this, 'tbody1', 'search1', 'chips1')"
+            >
+              State
+            </button>
+          </div>
+          <span class="result-count" id="count1"></span>
+        </div>
 
-/* ═══════════════ RENDER ═══════════════ */
+        <div class="table-scroll">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 110px">Adverb</th>
+                  <th style="width: 80px">Sub-type</th>
+                  <th style="width: 190px">Pattern</th>
+                  <th style="width: 180px">Meaning</th>
+                  <th>Example</th>
+                  <th style="width: 150px">Notes</th>
+                </tr>
+              </thead>
+              <tbody id="tbody1"></tbody>
+            </table>
+          </div>
+        </div>
 
-function badgeColor(subtype) {
-  const map = {
-    manner:'b-jotai', mimetic:'b-teido', state:'b-koou-both',
-    high:'b-jotai', low:'b-teido', comparative:'b-koou-pos',
-    negative:'b-koou-neg', probability:'b-koou-pos', conditional:'b-koou-cond', both:'b-koou-both'
-  };
-  return map[subtype] || 'b-jotai';
-}
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #1f558a"></div>
+            Manner
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #2a6647"></div>
+            Mimetic
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #8a5412"></div>
+            State
+          </div>
+        </div>
+      </section>
 
-function renderRows(data, filtered) {
-  if (!filtered.length) {
-    return `<tr class="empty-row"><td colspan="6"><span class="empty-kanji">？</span>No results found.</td></tr>`;
-  }
-  return filtered.map(d => `
+      <!-- ════════════════════════════════ -->
+      <!-- TYPE 2: 程度の副詞              -->
+      <!-- ════════════════════════════════ -->
+      <section class="section s2" id="teido">
+        <div class="section-header">
+          <div class="section-num">02 —</div>
+          <div class="section-title-wrap">
+            <div class="section-jp">程度の副詞</div>
+            <div class="section-en">
+              Degree Adverbs — "how much / how intense"
+            </div>
+            <p class="section-desc">
+              These adverbs show the <em>degree or intensity</em> of an
+              adjective or verb. They sit on a scale from very low (ほとんど,
+              少し) to very high (とても, 非常に). Many pair naturally with both
+              positive and negative predicates.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout callout-blue">
+          <span class="callout-icon">📊</span>
+          <div class="callout-body">
+            <div class="callout-title">Intensity scale</div>
+            <div class="callout-text">
+              <strong>High →</strong> 非常に &gt; すごく &gt; とても &gt; かなり
+              &gt; だいぶ &gt; けっこう<br />
+              <strong>Low →</strong> 少し &gt; ちょっと &gt;
+              あまり（＋否定）&gt; ほとんど（＋否定）
+            </div>
+          </div>
+        </div>
+
+        <div class="controls-bar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              id="search2"
+              placeholder="Search…"
+              oninput="filterTable('tbody2', 'search2', 'chips2')"
+            />
+          </div>
+          <div class="chips" id="chips2">
+            <button
+              class="chip active"
+              data-filter="all"
+              onclick="setChip(this, 'tbody2', 'search2', 'chips2')"
+            >
+              All
+            </button>
+            <button
+              class="chip"
+              data-filter="high"
+              onclick="setChip(this, 'tbody2', 'search2', 'chips2')"
+            >
+              High degree
+            </button>
+            <button
+              class="chip"
+              data-filter="low"
+              onclick="setChip(this, 'tbody2', 'search2', 'chips2')"
+            >
+              Low degree
+            </button>
+            <button
+              class="chip"
+              data-filter="comparative"
+              onclick="setChip(this, 'tbody2', 'search2', 'chips2')"
+            >
+              Comparative
+            </button>
+          </div>
+          <span class="result-count" id="count2"></span>
+        </div>
+
+        <div class="table-scroll">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 110px">Adverb</th>
+                  <th style="width: 90px">Sub-type</th>
+                  <th style="width: 190px">Pattern</th>
+                  <th style="width: 180px">Meaning</th>
+                  <th>Example</th>
+                  <th style="width: 150px">Notes</th>
+                </tr>
+              </thead>
+              <tbody id="tbody2"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #b83a20"></div>
+            High degree
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #1a6870"></div>
+            Low degree
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #5c3a8a"></div>
+            Comparative
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════ -->
+      <!-- TYPE 3: 呼応の副詞              -->
+      <!-- ════════════════════════════════ -->
+      <section class="section s3" id="koou">
+        <div class="section-header">
+          <div class="section-num">03 —</div>
+          <div class="section-title-wrap">
+            <div class="section-jp">呼応の副詞</div>
+            <div class="section-en">
+              Correlative Adverbs — must "call and respond"
+            </div>
+            <p class="section-desc">
+              Also called <strong>陳述の副詞</strong>. These adverbs
+              <em>require</em> a specific predicate ending. The adverb triggers
+              a grammatical obligation. Using the wrong ending is incorrect
+              Japanese — this is a very common JLPT exam point.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout callout-purple">
+          <span class="callout-icon">⚠️</span>
+          <div class="callout-body">
+            <div class="callout-title">JLPT Exam Alert</div>
+            <div class="callout-text">
+              呼応の副詞 are frequently tested in N4–N3 grammar questions. A
+              typical question shows the adverb and asks you to choose the
+              correct sentence ending. Memorise the pairs — not just the adverbs
+              alone.
+            </div>
+          </div>
+        </div>
+
+        <div class="controls-bar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              id="search3"
+              placeholder="Search…"
+              oninput="filterTable('tbody3', 'search3', 'chips3')"
+            />
+          </div>
+          <div class="chips" id="chips3">
+            <button
+              class="chip active"
+              data-filter="all"
+              onclick="setChip(this, 'tbody3', 'search3', 'chips3')"
+            >
+              All
+            </button>
+            <button
+              class="chip"
+              data-filter="negative"
+              onclick="setChip(this, 'tbody3', 'search3', 'chips3')"
+            >
+              ＋Negative
+            </button>
+            <button
+              class="chip"
+              data-filter="probability"
+              onclick="setChip(this, 'tbody3', 'search3', 'chips3')"
+            >
+              Probability
+            </button>
+            <button
+              class="chip"
+              data-filter="conditional"
+              onclick="setChip(this, 'tbody3', 'search3', 'chips3')"
+            >
+              Conditional
+            </button>
+            <button
+              class="chip"
+              data-filter="both"
+              onclick="setChip(this, 'tbody3', 'search3', 'chips3')"
+            >
+              Neg + Pos
+            </button>
+          </div>
+          <span class="result-count" id="count3"></span>
+        </div>
+
+        <div class="table-scroll">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 120px">Adverb</th>
+                  <th style="width: 100px">Sub-type</th>
+                  <th style="width: 200px">Required Pattern</th>
+                  <th style="width: 180px">Meaning</th>
+                  <th>Example</th>
+                  <th style="width: 150px">Notes</th>
+                </tr>
+              </thead>
+              <tbody id="tbody3"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #b83a20"></div>
+            Negative pattern
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #5c3a8a"></div>
+            Probability
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #1a6870"></div>
+            Conditional
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #8a5412"></div>
+            Neg + Pos (dual)
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════ -->
+      <!-- QUICK COMPARE                   -->
+      <!-- ════════════════════════════════ -->
+      <section class="section" id="compare">
+        <div class="section-header">
+          <div class="section-num">04 —</div>
+          <div class="section-title-wrap">
+            <div class="section-jp" style="color: var(--ink)">
+              Quick Comparison
+            </div>
+            <div class="section-en">Side-by-side type summary</div>
+            <p class="section-desc">
+              Use this table to quickly identify which type an adverb belongs to
+              and whether it carries grammatical constraints.
+            </p>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <div class="table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Type (Japanese)</th>
+                  <th>English Name</th>
+                  <th>Modifies</th>
+                  <th>Predicate Constraint?</th>
+                  <th>Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="adv-cell" style="color: var(--section-1)"
+                      >情態の副詞</span
+                    >
+                  </td>
+                  <td>Manner Adverbs</td>
+                  <td>Verbs, adjectives</td>
+                  <td style="color: var(--green)">✔ None — free</td>
+                  <td style="font-family: &quot;Noto Serif JP&quot;, serif">
+                    ゆっくり、はっきり、どんどん
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="adv-cell" style="color: var(--section-2)"
+                      >程度の副詞</span
+                    >
+                  </td>
+                  <td>Degree Adverbs</td>
+                  <td>Adjectives, adjectival verbs</td>
+                  <td style="color: var(--green)">✔ Mostly free</td>
+                  <td style="font-family: &quot;Noto Serif JP&quot;, serif">
+                    とても、かなり、少し
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="adv-cell" style="color: var(--section-3)"
+                      >呼応の副詞</span
+                    >
+                  </td>
+                  <td>Correlative Adverbs</td>
+                  <td>Entire predicate</td>
+                  <td style="color: var(--red)">⚠ Required pairing</td>
+                  <td style="font-family: &quot;Noto Serif JP&quot;, serif">
+                    ぜんぜん＋ない、たぶん＋でしょう
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="callout callout-red" style="margin-top: 2rem">
+          <span class="callout-icon">📝</span>
+          <div class="callout-body">
+            <div class="callout-title">
+              Exam tip — spotting the type quickly
+            </div>
+            <div class="callout-text">
+              If the adverb ends in <strong>〜り / 〜と / 〜に</strong> and
+              describes a motion or state → likely 情態.<br />
+              If it can be replaced by "very" or "a little" → likely 程度.<br />
+              If removing the sentence ending makes the sentence feel broken or
+              wrong → definitely 呼応.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      日本語副詞 完全ガイド &nbsp;·&nbsp; Japanese Adverbs Complete Reference
+      &nbsp;·&nbsp; JLPT N5–N3
+    </footer>
+
+    <script>
+      /* ═══════════════ DATA ═══════════════ */
+
+      const jotaiData = [
+        {
+          word: "ゆっくり",
+          reading: "yukkuri",
+          subtype: "manner",
+          subtypeName: "Manner",
+          badgeClass: "b-jotai",
+          patterns: ["ゆっくり＋動詞"],
+          meanings: ["slowly, at a relaxed pace"],
+          examples: [
+            {
+              jp: "もっとゆっくり話してください。",
+              en: "Please speak more slowly.",
+            },
+          ],
+          note: "Very common. Used for speed, pace, or rest (ゆっくり休む).",
+        },
+        {
+          word: "はっきり",
+          reading: "hakkiri",
+          subtype: "manner",
+          subtypeName: "Manner",
+          badgeClass: "b-jotai",
+          patterns: ["はっきり＋動詞（言う・見える）"],
+          meanings: ["clearly, distinctly"],
+          examples: [
+            { jp: "はっきり言ってください。", en: "Please say it clearly." },
+          ],
+          note: "Often with 言う (say) or 見える (can see).",
+        },
+        {
+          word: "きちんと",
+          reading: "kichinto",
+          subtype: "manner",
+          subtypeName: "Manner",
+          badgeClass: "b-jotai",
+          patterns: ["きちんと＋動詞"],
+          meanings: ["properly, neatly, correctly"],
+          examples: [
+            {
+              jp: "部屋をきちんと片付けた。",
+              en: "I tidied the room properly.",
+            },
+          ],
+          note: "Implies doing things the right way.",
+        },
+        {
+          word: "しっかり",
+          reading: "shikkari",
+          subtype: "manner",
+          subtypeName: "Manner",
+          badgeClass: "b-jotai",
+          patterns: ["しっかり＋動詞"],
+          meanings: ["firmly, solidly, properly"],
+          examples: [
+            { jp: "しっかり食べてね。", en: "Make sure to eat properly." },
+          ],
+          note: "Implies reliability or firmness.",
+        },
+        {
+          word: "どんどん",
+          reading: "dondon",
+          subtype: "mimetic",
+          subtypeName: "Mimetic",
+          badgeClass: "b-teido",
+          patterns: ["どんどん＋動詞"],
+          meanings: ["rapidly, one after another, progressively"],
+          examples: [
+            {
+              jp: "仕事がどんどん増えている。",
+              en: "The work is increasing rapidly.",
+            },
+          ],
+          note: "擬態語. Shows continuous rapid increase/progress.",
+        },
+        {
+          word: "だんだん",
+          reading: "dandan",
+          subtype: "mimetic",
+          subtypeName: "Mimetic",
+          badgeClass: "b-teido",
+          patterns: ["だんだん＋動詞・形容詞"],
+          meanings: ["gradually, little by little"],
+          examples: [
+            {
+              jp: "だんだん暖かくなってきた。",
+              en: "It has gradually become warmer.",
+            },
+          ],
+          note: "Slow progressive change over time.",
+        },
+        {
+          word: "ちゃんと",
+          reading: "chanto",
+          subtype: "manner",
+          subtypeName: "Manner",
+          badgeClass: "b-jotai",
+          patterns: ["ちゃんと＋動詞"],
+          meanings: ["properly, correctly (casual)"],
+          examples: [
+            {
+              jp: "ちゃんと宿題をしなさい。",
+              en: "Do your homework properly.",
+            },
+          ],
+          note: "More casual than きちんと. Common in spoken Japanese.",
+        },
+        {
+          word: "そっと",
+          reading: "sotto",
+          subtype: "manner",
+          subtypeName: "Manner",
+          badgeClass: "b-jotai",
+          patterns: ["そっと＋動詞"],
+          meanings: ["gently, quietly, softly"],
+          examples: [
+            { jp: "ドアをそっと閉めた。", en: "I closed the door gently." },
+          ],
+          note: "Implies care not to make noise or disturb.",
+        },
+        {
+          word: "すらすら",
+          reading: "surasura",
+          subtype: "mimetic",
+          subtypeName: "Mimetic",
+          badgeClass: "b-teido",
+          patterns: ["すらすら＋動詞"],
+          meanings: ["smoothly, fluently"],
+          examples: [
+            {
+              jp: "日本語がすらすら読める。",
+              en: "I can read Japanese fluently.",
+            },
+          ],
+          note: "Describes smooth, effortless performance.",
+        },
+        {
+          word: "ぐっすり",
+          reading: "gussuri",
+          subtype: "state",
+          subtypeName: "State",
+          badgeClass: "b-koou-both",
+          patterns: ["ぐっすり＋眠る"],
+          meanings: ["soundly (asleep), deeply"],
+          examples: [
+            {
+              jp: "ゆうべはぐっすり眠れた。",
+              en: "I slept soundly last night.",
+            },
+          ],
+          note: "Almost exclusively used with 眠る/寝る.",
+        },
+        {
+          word: "わざわざ",
+          reading: "wazawaza",
+          subtype: "manner",
+          subtypeName: "Manner",
+          badgeClass: "b-jotai",
+          patterns: ["わざわざ＋動詞"],
+          meanings: ["going out of one's way to, deliberately"],
+          examples: [
+            {
+              jp: "わざわざ来てくれてありがとう。",
+              en: "Thank you for coming all the way.",
+            },
+          ],
+          note: "Implies effort or inconvenience taken for someone.",
+        },
+        {
+          word: "急に",
+          reading: "kyuu ni",
+          subtype: "state",
+          subtypeName: "State",
+          badgeClass: "b-koou-both",
+          patterns: ["急に＋動詞"],
+          meanings: ["suddenly, abruptly"],
+          examples: [
+            { jp: "急に雨が降り出した。", en: "It suddenly started raining." },
+          ],
+          note: "Common in N5–N4.",
+        },
+        {
+          word: "自然に",
+          reading: "shizen ni",
+          subtype: "state",
+          subtypeName: "State",
+          badgeClass: "b-koou-both",
+          patterns: ["自然に＋動詞"],
+          meanings: ["naturally, spontaneously"],
+          examples: [
+            { jp: "自然に笑顔になった。", en: "I naturally started smiling." },
+          ],
+          note: "",
+        },
+        {
+          word: "特に",
+          reading: "toku ni",
+          subtype: "manner",
+          subtypeName: "Manner",
+          badgeClass: "b-jotai",
+          patterns: ["特に＋動詞・形容詞"],
+          meanings: ["especially, particularly"],
+          examples: [
+            {
+              jp: "特に問題はありません。",
+              en: "There is no particular problem.",
+            },
+          ],
+          note: "Common in both positive and negative contexts.",
+        },
+      ];
+
+      const teidoData = [
+        {
+          word: "とても",
+          reading: "totemo",
+          subtype: "high",
+          subtypeName: "High degree",
+          badgeClass: "b-jotai",
+          patterns: ["とても＋形容詞"],
+          meanings: ["very, extremely"],
+          examples: [{ jp: "今日はとても暑い。", en: "It is very hot today." }],
+          note: "N5 basic. Only positive predicates.",
+        },
+        {
+          word: "すごく",
+          reading: "sugoku",
+          subtype: "high",
+          subtypeName: "High degree",
+          badgeClass: "b-jotai",
+          patterns: ["すごく＋形容詞"],
+          meanings: ["very, incredibly (casual)"],
+          examples: [
+            { jp: "すごく楽しかった！", en: "It was incredibly fun!" },
+          ],
+          note: "Casual equivalent of とても.",
+        },
+        {
+          word: "非常に",
+          reading: "hijou ni",
+          subtype: "high",
+          subtypeName: "High degree",
+          badgeClass: "b-jotai",
+          patterns: ["非常に＋形容詞・副詞"],
+          meanings: ["extremely, very (formal)"],
+          examples: [
+            {
+              jp: "非常に重要な問題です。",
+              en: "This is an extremely important issue.",
+            },
+          ],
+          note: "Formal/written style. N3 level.",
+        },
+        {
+          word: "かなり",
+          reading: "kanari",
+          subtype: "high",
+          subtypeName: "High degree",
+          badgeClass: "b-jotai",
+          patterns: ["かなり＋形容詞・動詞"],
+          meanings: ["considerably, quite, fairly"],
+          examples: [
+            {
+              jp: "かなり難しい試験だった。",
+              en: "It was a considerably difficult exam.",
+            },
+          ],
+          note: "Implies more than expected.",
+        },
+        {
+          word: "だいぶ",
+          reading: "daibu",
+          subtype: "high",
+          subtypeName: "High degree",
+          badgeClass: "b-jotai",
+          patterns: ["だいぶ＋形容詞"],
+          meanings: ["considerably, to a great extent"],
+          examples: [
+            {
+              jp: "だいぶ上手になりましたね。",
+              en: "You have improved considerably.",
+            },
+          ],
+          note: "Often signals noticeable change over time.",
+        },
+        {
+          word: "けっこう",
+          reading: "kekkou",
+          subtype: "high",
+          subtypeName: "High degree",
+          badgeClass: "b-jotai",
+          patterns: ["けっこう＋形容詞"],
+          meanings: ["fairly, quite, rather (surprisingly so)"],
+          examples: [
+            {
+              jp: "けっこう辛い料理だった。",
+              en: "It was quite a spicy dish.",
+            },
+          ],
+          note: "Often implies mild surprise at the degree.",
+        },
+        {
+          word: "少し",
+          reading: "sukoshi",
+          subtype: "low",
+          subtypeName: "Low degree",
+          badgeClass: "b-teido",
+          patterns: ["少し＋形容詞・動詞"],
+          meanings: ["a little, slightly"],
+          examples: [
+            { jp: "少し待ってください。", en: "Please wait a little." },
+          ],
+          note: "N5 basic.",
+        },
+        {
+          word: "ちょっと",
+          reading: "chotto",
+          subtype: "low",
+          subtypeName: "Low degree",
+          badgeClass: "b-teido",
+          patterns: ["ちょっと＋形容詞・動詞"],
+          meanings: ["a bit, a little (casual)"],
+          examples: [{ jp: "ちょっと疲れた。", en: "I'm a little tired." }],
+          note: "Casual. Also used to soften refusals (ちょっと…).",
+        },
+        {
+          word: "もっと",
+          reading: "motto",
+          subtype: "comparative",
+          subtypeName: "Comparative",
+          badgeClass: "b-koou-pos",
+          patterns: ["もっと＋形容詞・動詞"],
+          meanings: ["more (than now / than before)"],
+          examples: [
+            { jp: "もっと練習が必要だ。", en: "More practice is needed." },
+          ],
+          note: "Always implies comparison to a current state.",
+        },
+        {
+          word: "ずっと",
+          reading: "zutto",
+          subtype: "comparative",
+          subtypeName: "Comparative",
+          badgeClass: "b-koou-pos",
+          patterns: ["ずっと＋比較形容詞", "ずっと＋継続動詞"],
+          meanings: ["far (more), by far", "the whole time, all along"],
+          examples: [
+            { jp: "彼女のほうがずっと上手だ。", en: "She is far better." },
+            { jp: "ずっと待っていた。", en: "I was waiting the whole time." },
+          ],
+          note: "Dual use: degree (comparison) + duration.",
+        },
+        {
+          word: "ほとんど",
+          reading: "hotondo",
+          subtype: "low",
+          subtypeName: "Low degree",
+          badgeClass: "b-teido",
+          patterns: ["ほとんど＋否定", "ほとんど＋肯定（数量）"],
+          meanings: ["almost (none/not)", "almost all / nearly"],
+          examples: [
+            { jp: "ほとんど食べなかった。", en: "I ate almost nothing." },
+            { jp: "ほとんどの人が知っている。", en: "Almost everyone knows." },
+          ],
+          note: "Used with both positive and negative predicates depending on meaning.",
+        },
+        {
+          word: "まあまあ",
+          reading: "maamaa",
+          subtype: "low",
+          subtypeName: "Low degree",
+          badgeClass: "b-teido",
+          patterns: ["まあまあ＋形容詞"],
+          meanings: ["so-so, fairly, passably"],
+          examples: [
+            { jp: "まあまあ上手にできた。", en: "I did it fairly well." },
+          ],
+          note: "Indicates mediocre or middling degree.",
+        },
+        {
+          word: "十分に",
+          reading: "juubun ni",
+          subtype: "high",
+          subtypeName: "High degree",
+          badgeClass: "b-jotai",
+          patterns: ["十分に＋動詞・形容詞"],
+          meanings: ["sufficiently, enough, fully"],
+          examples: [
+            { jp: "十分に準備しました。", en: "I prepared sufficiently." },
+          ],
+          note: "",
+        },
+      ];
+
+      const koouData = [
+        {
+          word: "ぜんぜん",
+          reading: "zenzen",
+          subtype: "negative",
+          subtypeName: "Negative",
+          badgeClass: "b-koou-neg",
+          patterns: ["ぜんぜん＋否定"],
+          meanings: ["not at all, not in the least"],
+          examples: [
+            { jp: "ぜんぜん分からない。", en: "I don't understand at all." },
+          ],
+          note: "Classic 呼応. Positive predicate is an error (informal exceptions exist in modern speech).",
+        },
+        {
+          word: "あまり",
+          reading: "amari",
+          subtype: "negative",
+          subtypeName: "Negative",
+          badgeClass: "b-koou-neg",
+          patterns: ["あまり＋否定"],
+          meanings: ["not very, not much"],
+          examples: [
+            { jp: "あまり好きじゃない。", en: "I don't like it very much." },
+          ],
+          note: "Softer negation than ぜんぜん.",
+        },
+        {
+          word: "なかなか",
+          reading: "nakanaka",
+          subtype: "both",
+          subtypeName: "Neg + Pos",
+          badgeClass: "b-koou-both",
+          patterns: ["なかなか＋否定 (won't easily)", "なかなか＋肯定 (quite)"],
+          meanings: [
+            "(neg) just won't, not easily",
+            "(pos) quite, rather, pretty good",
+          ],
+          examples: [
+            {
+              jp: "バスがなかなか来なかった。",
+              en: "The bus just wouldn't come.",
+            },
+            {
+              jp: "なかなか面白い映画だ。",
+              en: "It's quite an interesting film.",
+            },
+          ],
+          note: "Dual-use adverb. Meaning flips with positive/negative predicate.",
+        },
+        {
+          word: "めったに",
+          reading: "metta ni",
+          subtype: "negative",
+          subtypeName: "Negative",
+          badgeClass: "b-koou-neg",
+          patterns: ["めったに＋否定"],
+          meanings: ["rarely, seldom, hardly ever"],
+          examples: [{ jp: "めったに遅刻しない。", en: "I am rarely late." }],
+          note: "Stronger rarity than あまり.",
+        },
+        {
+          word: "たぶん",
+          reading: "tabun",
+          subtype: "probability",
+          subtypeName: "Probability",
+          badgeClass: "b-koou-pos",
+          patterns: ["たぶん＋でしょう・だろう"],
+          meanings: ["probably, perhaps (~60–70%)"],
+          examples: [
+            { jp: "たぶん彼は来るでしょう。", en: "He will probably come." },
+          ],
+          note: "Medium certainty. Always with speculative ending.",
+        },
+        {
+          word: "きっと",
+          reading: "kitto",
+          subtype: "probability",
+          subtypeName: "Probability",
+          badgeClass: "b-koou-pos",
+          patterns: ["きっと＋はずだ・でしょう"],
+          meanings: ["surely, certainly (~80–90%)"],
+          examples: [
+            { jp: "きっと大丈夫ですよ。", en: "I'm sure it'll be okay." },
+          ],
+          note: "Higher certainty than たぶん. Speaker's conviction.",
+        },
+        {
+          word: "おそらく",
+          reading: "osoraku",
+          subtype: "probability",
+          subtypeName: "Probability",
+          badgeClass: "b-koou-pos",
+          patterns: ["おそらく＋でしょう・だろう"],
+          meanings: ["probably, presumably (formal)"],
+          examples: [
+            {
+              jp: "おそらく明日は雨でしょう。",
+              en: "It will probably rain tomorrow.",
+            },
+          ],
+          note: "Formal version of たぶん. N3 level.",
+        },
+        {
+          word: "かならず",
+          reading: "kanarazu",
+          subtype: "probability",
+          subtypeName: "Probability",
+          badgeClass: "b-koou-pos",
+          patterns: ["かならず＋肯定"],
+          meanings: ["certainly, without fail, always"],
+          examples: [
+            { jp: "かならず電話します。", en: "I will definitely call you." },
+          ],
+          note: "Speaker's strong commitment or expectation.",
+        },
+        {
+          word: "もし",
+          reading: "moshi",
+          subtype: "conditional",
+          subtypeName: "Conditional",
+          badgeClass: "b-koou-cond",
+          patterns: ["もし〜たら・ば・と・なら"],
+          meanings: ["if (hypothetical)"],
+          examples: [
+            {
+              jp: "もし雨が降ったら、家にいます。",
+              en: "If it rains, I'll stay home.",
+            },
+          ],
+          note: "Must be followed by a conditional form. Pairs with all conditional forms.",
+        },
+        {
+          word: "たとえ",
+          reading: "tatoe",
+          subtype: "conditional",
+          subtypeName: "Conditional",
+          badgeClass: "b-koou-cond",
+          patterns: ["たとえ〜ても・でも"],
+          meanings: ["even if, even though"],
+          examples: [
+            { jp: "たとえ雨でも行きます。", en: "Even if it rains, I'll go." },
+          ],
+          note: "Always pairs with 〜ても / でも. Strong resolve.",
+        },
+        {
+          word: "まだ",
+          reading: "mada",
+          subtype: "both",
+          subtypeName: "Neg + Pos",
+          badgeClass: "b-koou-both",
+          patterns: ["まだ＋肯定 (still ongoing)", "まだ＋否定 (not yet)"],
+          meanings: ["still (positive)", "not yet (negative)"],
+          examples: [
+            { jp: "まだ食べています。", en: "I am still eating." },
+            { jp: "まだ終わっていない。", en: "It's not finished yet." },
+          ],
+          note: "Critical dual-use word. Predicate polarity changes the meaning completely.",
+        },
+        {
+          word: "もう",
+          reading: "mou",
+          subtype: "both",
+          subtypeName: "Neg + Pos",
+          badgeClass: "b-koou-both",
+          patterns: ["もう＋肯定 (already)", "もう＋否定 (no more/longer)"],
+          meanings: [
+            "already (positive)",
+            "no longer / not anymore (negative)",
+          ],
+          examples: [
+            { jp: "もう食べました。", en: "I already ate." },
+            { jp: "もう食べたくない。", en: "I don't want to eat anymore." },
+          ],
+          note: "Contrasts with まだ. Key N5 grammar.",
+        },
+        {
+          word: "ぜひ",
+          reading: "zehi",
+          subtype: "probability",
+          subtypeName: "Positive",
+          badgeClass: "b-koou-pos",
+          patterns: ["ぜひ＋肯定（依頼・意志）"],
+          meanings: ["by all means, please do, definitely"],
+          examples: [
+            { jp: "ぜひ来てください。", en: "Please come, by all means." },
+          ],
+          note: "Strong positive request. Never with negative predicates.",
+        },
+        {
+          word: "まるで",
+          reading: "marude",
+          subtype: "conditional",
+          subtypeName: "Simile",
+          badgeClass: "b-koou-cond",
+          patterns: ["まるで〜みたいだ・ようだ"],
+          meanings: ["just like, as if, as though"],
+          examples: [
+            { jp: "まるで夢のようだ。", en: "It's just like a dream." },
+          ],
+          note: "Must pair with みたいだ or ようだ. N3 simile.",
+        },
+        {
+          word: "どうせ",
+          reading: "douse",
+          subtype: "negative",
+          subtypeName: "Negative",
+          badgeClass: "b-koou-neg",
+          patterns: ["どうせ＋否定・諦め表現"],
+          meanings: ["anyway, in any case (resigned nuance)"],
+          examples: [
+            { jp: "どうせうまくいかないよ。", en: "It won't work out anyway." },
+          ],
+          note: "Carries a resigned or cynical nuance. N3.",
+        },
+      ];
+
+      /* ═══════════════ RENDER ═══════════════ */
+
+      function badgeColor(subtype) {
+        const map = {
+          manner: "b-jotai",
+          mimetic: "b-teido",
+          state: "b-koou-both",
+          high: "b-jotai",
+          low: "b-teido",
+          comparative: "b-koou-pos",
+          negative: "b-koou-neg",
+          probability: "b-koou-pos",
+          conditional: "b-koou-cond",
+          both: "b-koou-both",
+        };
+        return map[subtype] || "b-jotai";
+      }
+
+      function renderRows(data, filtered) {
+        if (!filtered.length) {
+          return `<tr class="empty-row"><td colspan="6"><span class="empty-kanji">？</span>No results found.</td></tr>`;
+        }
+        return filtered
+          .map(
+            (d) => `
     <tr>
       <td>
         <div class="word-jp">${d.word}</div>
         <div class="word-reading">${d.reading}</div>
       </td>
       <td><span class="badge ${badgeColor(d.subtype)}">${d.subtypeName}</span></td>
-      <td>${d.patterns.map(p=>`<div class="pattern-line">${p}</div>`).join('')}</td>
-      <td>${d.meanings.map(m=>`<div class="meaning-line">${m}</div>`).join('')}</td>
-      <td>${d.examples.map(e=>`<div class="ex-block"><div class="ex-jp">${e.jp}</div><div class="ex-en">${e.en}</div></div>`).join('')}</td>
-      <td>${d.note ? `<div class="note-text">${d.note}</div>` : ''}</td>
+      <td>${d.patterns.map((p) => `<div class="pattern-line">${p}</div>`).join("")}</td>
+      <td>${d.meanings.map((m) => `<div class="meaning-line">${m}</div>`).join("")}</td>
+      <td>${d.examples.map((e) => `<div class="ex-block"><div class="ex-jp">${e.jp}</div><div class="ex-en">${e.en}</div></div>`).join("")}</td>
+      <td>${d.note ? `<div class="note-text">${d.note}</div>` : ""}</td>
     </tr>
-  `).join('');
-}
+  `,
+          )
+          .join("");
+      }
 
-function filterTable(tbodyId, searchId, chipsId) {
-  const tbody = document.getElementById(tbodyId);
-  const q = document.getElementById(searchId).value.toLowerCase();
-  const activeChip = document.querySelector(`#${chipsId} .chip.active`);
-  const filterType = activeChip ? activeChip.dataset.filter : 'all';
+      function filterTable(tbodyId, searchId, chipsId) {
+        const tbody = document.getElementById(tbodyId);
+        const q = document.getElementById(searchId).value.toLowerCase();
+        const activeChip = document.querySelector(`#${chipsId} .chip.active`);
+        const filterType = activeChip ? activeChip.dataset.filter : "all";
 
-  const sourceMap = { tbody1: jotaiData, tbody2: teidoData, tbody3: koouData };
-  const data = sourceMap[tbodyId];
+        const sourceMap = {
+          tbody1: jotaiData,
+          tbody2: teidoData,
+          tbody3: koouData,
+        };
+        const data = sourceMap[tbodyId];
 
-  const filtered = data.filter(d => {
-    const matchType = filterType === 'all' || d.subtype === filterType;
-    const matchQ = !q ||
-      d.word.includes(q) || d.reading.includes(q) ||
-      d.meanings.some(m => m.toLowerCase().includes(q)) ||
-      d.examples.some(e => e.jp.includes(q) || e.en.toLowerCase().includes(q)) ||
-      d.patterns.some(p => p.toLowerCase().includes(q)) ||
-      d.subtypeName.toLowerCase().includes(q);
-    return matchType && matchQ;
-  });
+        const filtered = data.filter((d) => {
+          const matchType = filterType === "all" || d.subtype === filterType;
+          const matchQ =
+            !q ||
+            d.word.includes(q) ||
+            d.reading.includes(q) ||
+            d.meanings.some((m) => m.toLowerCase().includes(q)) ||
+            d.examples.some(
+              (e) => e.jp.includes(q) || e.en.toLowerCase().includes(q),
+            ) ||
+            d.patterns.some((p) => p.toLowerCase().includes(q)) ||
+            d.subtypeName.toLowerCase().includes(q);
+          return matchType && matchQ;
+        });
 
-  tbody.innerHTML = renderRows(data, filtered);
+        tbody.innerHTML = renderRows(data, filtered);
 
-  const countId = tbodyId.replace('tbody','count');
-  document.getElementById(countId).textContent = `${filtered.length} / ${data.length}`;
-}
+        const countId = tbodyId.replace("tbody", "count");
+        document.getElementById(countId).textContent =
+          `${filtered.length} / ${data.length}`;
+      }
 
-function setChip(chipEl, tbodyId, searchId, chipsId) {
-  document.querySelectorAll(`#${chipsId} .chip`).forEach(c => c.classList.remove('active'));
-  chipEl.classList.add('active');
-  filterTable(tbodyId, searchId, chipsId);
-}
+      function setChip(chipEl, tbodyId, searchId, chipsId) {
+        document
+          .querySelectorAll(`#${chipsId} .chip`)
+          .forEach((c) => c.classList.remove("active"));
+        chipEl.classList.add("active");
+        filterTable(tbodyId, searchId, chipsId);
+      }
 
-function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  const idx = ['overview','jotai','teido','koou','compare'].indexOf(id);
-  if (idx >= 0) document.querySelectorAll('.nav-tab')[idx].classList.add('active');
-}
+      function scrollToSection(id) {
+        document
+          .getElementById(id)
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+        document
+          .querySelectorAll(".nav-tab")
+          .forEach((t) => t.classList.remove("active"));
+        const idx = ["overview", "jotai", "teido", "koou", "compare"].indexOf(
+          id,
+        );
+        if (idx >= 0)
+          document.querySelectorAll(".nav-tab")[idx].classList.add("active");
+      }
 
-/* ═══════════════ INIT ═══════════════ */
-function init() {
-  filterTable('tbody1','search1','chips1');
-  filterTable('tbody2','search2','chips2');
-  filterTable('tbody3','search3','chips3');
-}
+      /* ═══════════════ INIT ═══════════════ */
+      function init() {
+        filterTable("tbody1", "search1", "chips1");
+        filterTable("tbody2", "search2", "chips2");
+        filterTable("tbody3", "search3", "chips3");
+      }
 
-init();
+      init();
 
-// Update active nav on scroll
-const sections = ['overview','jotai','teido','koou','compare'];
-window.addEventListener('scroll', () => {
-  let current = 'overview';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && window.scrollY >= el.offsetTop - 80) current = id;
-  });
-  const idx = sections.indexOf(current);
-  document.querySelectorAll('.nav-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
-});
-</script>
-</body>
+      // Update active nav on scroll
+      const sections = ["overview", "jotai", "teido", "koou", "compare"];
+      window.addEventListener("scroll", () => {
+        let current = "overview";
+        sections.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && window.scrollY >= el.offsetTop - 80) current = id;
+        });
+        const idx = sections.indexOf(current);
+        document
+          .querySelectorAll(".nav-tab")
+          .forEach((t, i) => t.classList.toggle("active", i === idx));
+      });
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js").catch((error) => {
+            console.error("Service worker registration failed:", error);
+          });
+        });
+      }
+    </script>
+  </body>
 </html>
